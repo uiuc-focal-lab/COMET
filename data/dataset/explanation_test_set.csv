@@ -1,0 +1,1824 @@
+hex,throughput,asm,categories,uica_result,ithemal_result,ithemal_mape,num_insts,num_mem_reads,num_mem_writes,baseline_tp,baseline_mape,tokens,simple_model_output,simple_model_exp,sources
+488b7424304c896008448970104885f6,199.0,"	.text
+	mov	rsi, qword ptr [rsp + 48]
+	mov	qword ptr [rax + 8], r12
+	mov	dword ptr [rax + 16], r14d
+	test	rsi, rsi
+
+",Ld/St,2.0,199.0892791748047,0.0004486390693702,4,1,2,2.0,0.0050251256281407,"[[6, 1, 7, 11, 9, 10, 3, 2, 5], [0, 1, 45, 3, 7, 15, 9, 10, 5], [0, 1, 40, 3, 7, 15, 9, 10, 5], [25, 1, 2, 2, 3, 5]]",1.0,"['num_insts', 'inst_1', 'inst_2']",['clang']
+c5dc58c0488b45884c8b75904d89ebc5ec58c94d8d0c00c5fc58c14939f6,698.0,"	.text
+	vaddps	ymm0, ymm4, ymm0
+	mov	rax, qword ptr [rbp - 120]
+	mov	r14, qword ptr [rbp - 112]
+	mov	r11, r13
+	vaddps	ymm1, ymm2, ymm1
+	lea	r9, [r8 + rax]
+	vaddps	ymm0, ymm0, ymm1
+	cmp	r14, rsi
+
+",Scalar/Vec,6.0,457.1112060546875,0.3451128853084706,8,3,0,2.0,0.7134670487106017,"[[249, 1, 92, 78, 3, 78, 5], [6, 1, 7, 23, 9, 10, 3, 15, 5], [6, 1, 7, 23, 9, 10, 3, 17, 5], [0, 1, 19, 3, 65, 5], [249, 1, 79, 85, 3, 85, 5], [33, 1, 7, 53, 15, 10, 3, 47, 5], [249, 1, 78, 85, 3, 78, 5], [13, 1, 17, 2, 3, 5]]",2.0,"['num_insts', '0_6_RAW', '4_6_RAW']",['tensorflow']
+498b47184889442450488b14244c89e64889ef,124.0,"	.text
+	mov	rax, qword ptr [r15 + 24]
+	mov	qword ptr [rsp + 80], rax
+	mov	rdx, qword ptr [rsp]
+	mov	rsi, r12
+	mov	rdi, rbp
+
+",Ld/St,1.25,124.88238525390624,0.007116010112147,5,2,1,1.25,0.0080645161290322,"[[6, 1, 7, 30, 9, 10, 3, 15, 5], [0, 1, 15, 3, 7, 11, 9, 10, 5], [6, 1, 7, 11, 10, 3, 4, 5], [0, 1, 45, 3, 2, 5], [0, 1, 23, 3, 8, 5]]",1.5,['0_1_RAW'],['clang']
+4183ff0119c083e00885c98945c4b8010000000f4fc139c2,298.0,"	.text
+	cmp	r15d, 1
+	sbb	eax, eax
+	and	eax, 8
+	test	ecx, ecx
+	mov	dword ptr [rbp - 60], eax
+	mov	eax, 1
+	cmovg	eax, ecx
+	cmp	edx, eax
+
+",Scalar,3.04,328.8065795898437,0.1033777838585358,8,0,1,2.0,0.3288590604026845,"[[13, 1, 39, 9, 3, 5], [115, 1, 31, 31, 3, 31, 5], [32, 1, 9, 31, 3, 31, 5], [25, 1, 12, 12, 3, 5], [0, 1, 31, 3, 7, 23, 9, 10, 5], [14, 1, 9, 3, 31, 5], [195, 1, 12, 3, 31, 5], [13, 1, 22, 31, 3, 5]]",2.0,['num_insts'],"['openblas-zgeev.goto', 'openblas-cgeev.goto']"
+85c0488b842488000000c5fb104c2438c5f9289424c00000004c8b9424d80000004c8b9c24f0000000448b20,298.0,"	.text
+	test	eax, eax
+	mov	rax, qword ptr [rsp + 136]
+	vmovsd	xmm1, qword ptr [rsp + 56]      # xmm1 = mem[0],zero
+	vmovapd	xmm2, xmmword ptr [rsp + 192]
+	mov	r10, qword ptr [rsp + 216]
+	mov	r11, qword ptr [rsp + 240]
+	mov	r12d, dword ptr [rax]
+
+",Ld,3.0,297.466552734375,0.0017900914953859,3,2,0,1.0,0.6644295302013423,"[[25, 1, 31, 31, 3, 5], [6, 1, 7, 11, 9, 10, 3, 15, 5], [99, 1, 7, 11, 9, 10, 3, 62, 5], [156, 1, 7, 11, 9, 10, 3, 69, 5], [6, 1, 7, 11, 9, 10, 3, 66, 5], [6, 1, 7, 11, 9, 10, 3, 65, 5], [6, 1, 7, 15, 10, 3, 21, 5]]",1.75,['num_insts'],['openblas-dgeev.goto']
+4989c84889c20f1f4400004883ea08c4c17c11004983c0204883fa07,199.0,"	.text
+	mov	r8, rcx
+	mov	rdx, rax
+	nop	dword ptr [rax + rax]
+	sub	rdx, 8
+	vmovups	ymmword ptr [r8], ymm0
+	add	r8, 32
+	cmp	rdx, 7
+
+",Scalar,2.0,211.053451538086,0.0605701082315879,7,1,1,1.75,0.1206030150753768,"[[0, 1, 20, 3, 53, 5], [0, 1, 15, 3, 4, 5], [42, 1, 7, 15, 15, 10, 3, 5], [35, 1, 9, 4, 3, 4, 5], [247, 1, 78, 3, 7, 53, 10, 5], [16, 1, 9, 53, 3, 53, 5], [13, 1, 4, 9, 3, 5]]",1.75,['num_insts'],"['openblas-sgeev.goto', 'openblas-sgemm.goto']"
+488d4d1031d24889c848f7f34885d2,2100.0,"	.text
+	lea	rcx, [rbp + 16]
+	xor	edx, edx
+	mov	rax, rcx
+	div	rbx
+	test	rdx, rdx
+
+",Scalar/Vec,21.0,2124.76708984375,0.0117938523065476,5,1,0,1.25,0.9404761904761904,"[[33, 1, 7, 23, 9, 10, 3, 20, 5], [43, 1, 22, 22, 3, 22, 5], [0, 1, 20, 3, 15, 5], [181, 1, 41, 4, 15, 3, 4, 15, 5], [25, 1, 4, 4, 3, 5]]",21.0,['inst_3'],"['tensorflow', 'ffmpeg']"
+fec84188450c49c74500000000004c89ffbe10000000,197.0,"	.text
+	dec	al
+	mov	byte ptr [r13 + 12], al
+	mov	qword ptr [r13], 0
+	mov	rdi, r15
+	mov	esi, 16
+
+",St,2.0,186.5565643310547,0.0530123638017528,5,0,2,2.0,0.0152284263959391,"[[130, 1, 58, 3, 58, 5], [0, 1, 58, 3, 7, 19, 9, 10, 5], [0, 1, 9, 3, 7, 19, 10, 5], [0, 1, 30, 3, 8, 5], [14, 1, 9, 3, 24, 5]]",1.25,"['num_insts', '0_1_RAW']",['embree']
+41bd8000000031d24489e841f7f485d24189c7,1000.0,"	.text
+	mov	r13d, 128
+	xor	edx, edx
+	mov	eax, r13d
+	div	r12d
+	test	edx, edx
+	mov	r15d, eax
+
+",Scalar/Vec,9.0,938.5172119140624,0.0614827880859376,6,0,0,1.5,0.85,"[[14, 1, 9, 3, 57, 5], [43, 1, 22, 22, 3, 22, 5], [0, 1, 57, 3, 31, 5], [181, 1, 21, 22, 31, 3, 22, 31, 5], [25, 1, 22, 22, 3, 5], [0, 1, 31, 3, 39, 5]]",9.0,['inst_3'],['clang']
+488d44241831d24889c348894424084889c849f7b0280100004889d64889da,2198.0,"	.text
+	lea	rax, [rsp + 24]
+	xor	edx, edx
+	mov	rbx, rax
+	mov	qword ptr [rsp + 8], rax
+	mov	rax, rcx
+	div	qword ptr [r8 + 296]
+	mov	rsi, rdx
+	mov	rdx, rbx
+
+",Scalar/Vec,21.0,2277.354736328125,0.0361031557452798,8,2,1,2.0,0.9090081892629664,"[[33, 1, 7, 11, 9, 10, 3, 15, 5], [43, 1, 22, 22, 3, 22, 5], [0, 1, 15, 3, 41, 5], [0, 1, 15, 3, 7, 11, 9, 10, 5], [0, 1, 20, 3, 15, 5], [181, 1, 7, 53, 9, 10, 4, 15, 3, 4, 15, 5], [0, 1, 4, 3, 2, 5], [0, 1, 41, 3, 4, 5]]",21.0,['inst_5'],['tensorflow']
+488d4401ff31d2488bbc24e000000048f7f1488b5708480fafc1f682990200000189842414010000,3951.0,"	.text
+	lea	rax, [rcx + rax - 1]
+	xor	edx, edx
+	mov	rdi, qword ptr [rsp + 224]
+	div	rcx
+	mov	rdx, qword ptr [rdi + 8]
+	imul	rax, rcx
+	test	byte ptr [rdx + 665], 1
+	mov	dword ptr [rsp + 276], eax
+
+",Scalar/Vec,36.0,2393.316650390625,0.394250404861902,8,4,1,2.0,0.9493799038218173,"[[33, 1, 7, 20, 15, 9, 10, 3, 15, 5], [43, 1, 22, 22, 3, 22, 5], [6, 1, 7, 11, 9, 10, 3, 8, 5], [181, 1, 20, 4, 15, 3, 4, 15, 5], [6, 1, 7, 8, 9, 10, 3, 4, 5], [28, 1, 20, 15, 3, 15, 5], [25, 1, 7, 4, 9, 10, 9, 3, 5], [0, 1, 31, 3, 7, 11, 9, 10, 5]]",21.0,['inst_3'],['clang']
+bee0965d004889c34889c24c89e7,103.0,"	.text
+	mov	esi, 6133472
+	mov	rbx, rax
+	mov	rdx, rax
+	mov	rdi, r12
+
+",Scalar,1.0,104.80543518066406,0.017528496899651,4,0,0,1.0,0.029126213592233,"[[14, 1, 9, 3, 24, 5], [0, 1, 15, 3, 41, 5], [0, 1, 15, 3, 4, 5], [0, 1, 45, 3, 8, 5]]",1.0,['num_insts'],['tensorflow']
+8b004883c4385b5d415c415d,402.0,"	.text
+	mov	eax, dword ptr [rax]
+	add	rsp, 56
+	pop	rbx
+	pop	rbp
+	pop	r12
+	pop	r13
+
+",Ld,4.0,410.74127197265625,0.0217444576434235,6,1,0,1.5,0.626865671641791,"[[6, 1, 7, 15, 10, 3, 31, 5], [16, 1, 9, 11, 3, 11, 5], [64, 1, 11, 7, 11, 10, 3, 41, 11, 5], [64, 1, 11, 7, 11, 10, 3, 23, 11, 5], [64, 1, 11, 7, 11, 10, 3, 45, 11, 5], [64, 1, 11, 7, 11, 10, 3, 19, 11, 5]]",1.5,['num_insts'],['tensorflow']
+4889f84989f94809f048c1e8204c0fafce4885c0,148.0,"	.text
+	mov	rax, rdi
+	mov	r9, rdi
+	or	rax, rsi
+	shr	rax, 32
+	imul	r9, rsi
+	test	rax, rax
+
+",Scalar,2.0,192.5381622314453,0.3009335285908467,6,0,0,1.5,0.0135135135135135,"[[0, 1, 8, 3, 15, 5], [0, 1, 8, 3, 47, 5], [49, 1, 2, 15, 3, 15, 5], [50, 1, 9, 15, 3, 15, 5], [28, 1, 2, 47, 3, 47, 5], [25, 1, 15, 15, 3, 5]]",1.5,['num_insts'],['tensorflow']
+4c8b0b4c8b53084d8d4510488b4424184d894d004d8955084c89234c897b08,400.0,"	.text
+	mov	r9, qword ptr [rbx]
+	mov	r10, qword ptr [rbx + 8]
+	lea	r8, [r13 + 16]
+	mov	rax, qword ptr [rsp + 24]
+	mov	qword ptr [r13], r9
+	mov	qword ptr [r13 + 8], r10
+	mov	qword ptr [rbx], r12
+	mov	qword ptr [rbx + 8], r15
+
+",Ld/St,4.0,630.9404296875,0.57735107421875,8,4,4,4.0,0.0,"[[6, 1, 7, 41, 10, 3, 47, 5], [6, 1, 7, 41, 9, 10, 3, 66, 5], [33, 1, 7, 19, 9, 10, 3, 53, 5], [6, 1, 7, 11, 9, 10, 3, 15, 5], [0, 1, 47, 3, 7, 19, 10, 5], [0, 1, 66, 3, 7, 19, 9, 10, 5], [0, 1, 45, 3, 7, 41, 10, 5], [0, 1, 30, 3, 7, 41, 9, 10, 5]]",2.0,['num_insts'],['clang']
+498d5424c84c89e34883eb584889d84c29e0488b7c0258488d43304839c7,197.0,"	.text
+	lea	rdx, [r12 - 56]
+	mov	rbx, r12
+	sub	rbx, 88
+	mov	rax, rbx
+	sub	rax, r12
+	mov	rdi, qword ptr [rdx + rax + 88]
+	lea	rax, [rbx + 48]
+	cmp	rdi, rax
+
+",Scalar,2.12,206.0221405029297,0.0457976675275618,8,3,0,2.0,0.0152284263959391,"[[33, 1, 7, 45, 9, 10, 3, 4, 5], [0, 1, 45, 3, 41, 5], [35, 1, 9, 41, 3, 41, 5], [0, 1, 41, 3, 15, 5], [35, 1, 45, 15, 3, 15, 5], [6, 1, 7, 4, 15, 9, 10, 3, 8, 5], [33, 1, 7, 41, 9, 10, 3, 15, 5], [13, 1, 8, 15, 3, 5]]",2.0,['num_insts'],['clang']
+488bbc24d0010000c5fb10ac248800000031c04183ffff0f94c0c5fb112f48c7470800000000488bbc24d8010000443b2f,314.0,"	.text
+	mov	rdi, qword ptr [rsp + 464]
+	vmovsd	xmm5, qword ptr [rsp + 136]     # xmm5 = mem[0],zero
+	xor	eax, eax
+	cmp	r15d, -1
+	sete	al
+	vmovsd	qword ptr [rdi], xmm5
+	mov	qword ptr [rdi + 8], 0
+	mov	rdi, qword ptr [rsp + 472]
+	cmp	r13d, dword ptr [rdi]
+
+",Ld/St,3.15,370.65960693359375,0.1804446080687699,2,2,0,1.0,0.6815286624203821,"[[6, 1, 7, 11, 9, 10, 3, 8, 5], [99, 1, 7, 11, 9, 10, 3, 83, 5], [43, 1, 31, 31, 3, 31, 5], [13, 1, 39, 9, 3, 5], [112, 1, 3, 58, 5], [99, 1, 83, 3, 7, 8, 10, 5], [0, 1, 9, 3, 7, 8, 9, 10, 5], [6, 1, 7, 11, 9, 10, 3, 8, 5], [13, 1, 57, 7, 8, 10, 3, 5]]",2.25,['num_insts'],['openblas-zgeev.goto']
+488d4424704c8dac249000000089d548894424104c89e64c8b6424104c89e7,193.0,"	.text
+	lea	rax, [rsp + 112]
+	lea	r13, [rsp + 144]
+	mov	ebp, edx
+	mov	qword ptr [rsp + 16], rax
+	mov	rsi, r12
+	mov	r12, qword ptr [rsp + 16]
+	mov	rdi, r12
+
+",Ld/St,1.93,198.70542907714844,0.0295618086898882,7,3,1,1.75,0.0932642487046631,"[[33, 1, 7, 11, 9, 10, 3, 15, 5], [33, 1, 7, 11, 9, 10, 3, 19, 5], [0, 1, 22, 3, 93, 5], [0, 1, 15, 3, 7, 11, 9, 10, 5], [0, 1, 45, 3, 2, 5], [6, 1, 7, 11, 9, 10, 3, 45, 5], [0, 1, 45, 3, 8, 5]]",1.75,['num_insts'],['clang']
+49c747280400000049c7473000000000488b8424080100004885c049894738,298.0,"	.text
+	mov	qword ptr [r15 + 40], 4
+	mov	qword ptr [r15 + 48], 0
+	mov	rax, qword ptr [rsp + 264]
+	test	rax, rax
+	mov	qword ptr [r15 + 56], rax
+
+",St,3.0,290.8388061523437,0.0240308518377728,5,1,3,3.0,0.0067114093959731,"[[0, 1, 9, 3, 7, 30, 9, 10, 5], [0, 1, 9, 3, 7, 30, 9, 10, 5], [6, 1, 7, 11, 9, 10, 3, 15, 5], [25, 1, 15, 15, 3, 5], [0, 1, 15, 3, 7, 30, 9, 10, 5]]",1.5,['2_4_RAW'],['clang']
+498b34244189c7418b8424100200004989d048c7442450000000004885f689442458,210.0,"	.text
+	mov	rsi, qword ptr [r12]
+	mov	r15d, eax
+	mov	eax, dword ptr [r12 + 528]
+	mov	r8, rdx
+	mov	qword ptr [rsp + 80], 0
+	test	rsi, rsi
+	mov	dword ptr [rsp + 88], eax
+
+",Ld/St,2.12,210.4008178710937,0.0019086565290175,7,2,2,2.0,0.0476190476190476,"[[6, 1, 7, 45, 10, 3, 2, 5], [0, 1, 31, 3, 39, 5], [6, 1, 7, 45, 9, 10, 3, 31, 5], [0, 1, 4, 3, 53, 5], [0, 1, 9, 3, 7, 11, 9, 10, 5], [25, 1, 2, 2, 3, 5], [0, 1, 31, 3, 7, 11, 9, 10, 5]]",1.75,['num_insts'],['clang']
+488b5424104883c0074c8b4c243848c1e803498d4405ff490fafd5488d34d50000000031d249f7f5480faff0,4032.0,"	.text
+	mov	rdx, qword ptr [rsp + 16]
+	add	rax, 7
+	mov	r9, qword ptr [rsp + 56]
+	shr	rax, 3
+	lea	rax, [r13 + rax - 1]
+	imul	rdx, r13
+	lea	rsi, [8*rdx]
+	xor	edx, edx
+	div	r13
+	imul	rsi, rax
+
+",Scalar/Vec,35.6,2140.40087890625,0.4691466074141245,10,4,0,2.5,0.9379960317460316,"[[6, 1, 7, 11, 9, 10, 3, 4, 5], [16, 1, 9, 15, 3, 15, 5], [6, 1, 7, 11, 9, 10, 3, 47, 5], [50, 1, 9, 15, 3, 15, 5], [33, 1, 7, 19, 15, 9, 10, 3, 15, 5], [28, 1, 19, 4, 3, 4, 5], [33, 1, 7, 4, 10, 3, 2, 5], [43, 1, 22, 22, 3, 22, 5], [181, 1, 19, 4, 15, 3, 4, 15, 5], [28, 1, 15, 2, 3, 2, 5]]",21.0,['inst_8'],['clang']
+c4c16259143831c085c9488d143bc4c17a111439c4c17a111438,1169.0,"	.text
+	vmulss	xmm2, xmm3, dword ptr [r8 + rdi]
+	xor	eax, eax
+	test	ecx, ecx
+	lea	rdx, [rbx + rdi]
+	vmovss	dword ptr [r9 + rdi], xmm2
+	vmovss	dword ptr [r8 + rdi], xmm2
+
+",Scalar,11.0,1157.0091552734375,0.0102573522040739,6,2,2,2.0,0.8289136013686912,"[[185, 1, 102, 7, 53, 8, 10, 3, 69, 5], [43, 1, 31, 31, 3, 31, 5], [25, 1, 12, 12, 3, 5], [33, 1, 7, 41, 8, 10, 3, 4, 5], [131, 1, 69, 3, 7, 47, 8, 10, 5], [131, 1, 69, 3, 7, 53, 8, 10, 5]]",1.5,"['num_insts', '0_4_RAW', '0_5_RAW']",['openblas-sgetri.goto']
+488b85d0fdffffb901000000488d7020483b8df8fdffff89c8,155.0,"	.text
+	mov	rax, qword ptr [rbp - 560]
+	mov	ecx, 1
+	lea	rsi, [rax + 32]
+	cmp	rcx, qword ptr [rbp - 520]
+	mov	eax, ecx
+
+",Ld,1.56,142.9150848388672,0.0779671945879536,5,3,0,1.5,0.032258064516129,"[[6, 1, 7, 23, 9, 10, 3, 15, 5], [14, 1, 9, 3, 12, 5], [33, 1, 7, 15, 9, 10, 3, 2, 5], [13, 1, 20, 7, 23, 9, 10, 3, 5], [0, 1, 12, 3, 31, 5]]",1.25,['num_insts'],['tensorflow']
+c5fa1108c7400400000000c5fa115008c57a11480c,399.0,"	.text
+	vmovss	dword ptr [rax], xmm1
+	mov	dword ptr [rax + 4], 0
+	vmovss	dword ptr [rax + 8], xmm2
+	vmovss	dword ptr [rax + 12], xmm9
+
+",St,4.0,401.0806274414063,0.0052146051163065,4,0,4,4.0,0.0025062656641603,"[[131, 1, 62, 3, 7, 15, 10, 5], [0, 1, 9, 3, 7, 15, 9, 10, 5], [131, 1, 69, 3, 7, 15, 9, 10, 5], [131, 1, 72, 3, 7, 15, 9, 10, 5]]",1.0,"['num_insts', 'inst_0', 'inst_1', 'inst_2', 'inst_3']",['openblas-chemm.goto']
+41564885d2415541bd2300000041544989f4554889d5534889fb,506.0,"	.text
+	push	r14
+	test	rdx, rdx
+	push	r13
+	mov	r13d, 35
+	push	r12
+	mov	r12, rsi
+	push	rbp
+	mov	rbp, rdx
+	push	rbx
+	mov	rbx, rdi
+
+",St,5.0,505.0607299804688,0.0018562648607335,10,0,0,2.5,0.5059288537549407,"[[36, 1, 17, 11, 3, 11, 7, 11, 9, 10, 5], [25, 1, 4, 4, 3, 5], [36, 1, 19, 11, 3, 11, 7, 11, 9, 10, 5], [14, 1, 9, 3, 57, 5], [36, 1, 45, 11, 3, 11, 7, 11, 9, 10, 5], [0, 1, 2, 3, 45, 5], [36, 1, 23, 11, 3, 11, 7, 11, 9, 10, 5], [0, 1, 4, 3, 23, 5], [36, 1, 41, 11, 3, 11, 7, 11, 9, 10, 5], [0, 1, 8, 3, 41, 5]]",2.5,['num_insts'],['ffmpeg']
+4c89c74889d048c1e80383e707,124.0,"	.text
+	mov	rdi, r8
+	mov	rax, rdx
+	shr	rax, 3
+	and	edi, 7
+
+",Scalar,1.25,113.51699829101562,0.0845403363627772,4,0,0,1.0,0.1935483870967742,"[[0, 1, 53, 3, 8, 5], [0, 1, 4, 3, 15, 5], [50, 1, 9, 15, 3, 15, 5], [32, 1, 9, 44, 3, 44, 5]]",1.0,['num_insts'],"['openblas-zpotrf.goto', 'openblas-sgemm.goto', 'openblas-dsyrk.goto', 'openblas-cger.goto', 'openblas-icamax.goto', 'openblas-sasum.goto', 'openblas-strmm.goto', 'openblas-zscal.goto', 'openblas-csyrk.goto', 'openblas-sger.goto', 'openblas-idamax.goto', 'openblas-dgeev.goto', 'openblas-dtrsm.goto', 'openblas-ztrmm.goto', 'openblas-scholesky.goto', 'openblas-dgetri.goto', 'openblas-snrm2.goto', 'openblas-sgemv.goto', 'openblas-ztrsm.goto', 'openblas-zgemm.goto', 'openblas-ssymv.goto', 'openblas-cgeev.goto', 'openblas-daxpy.goto', 'openblas-srot.goto', 'openblas-cgemm.goto', 'openblas-zgesv.goto', 'openblas-strsm.goto', 'openblas-cgesv.goto', 'openblas-zhemv.goto', 'sqlite', 'openblas-cher2k.goto', 'openblas-zasum.goto', 'openblas-sscal.goto', 'openblas-dznrm2.goto', 'openblas-zswap.goto', 'openblas-casum.goto', 'openblas-dgesv.goto', 'openblas-ctrmm.goto', 'openblas-scnrm2.goto', 'openblas-zsymv.goto', 'openblas-zaxpy.goto', 'gzip-decompress', 'openblas-sswap.goto', 'gzip-compress', 'clang', 'openblas-cscal.goto', 'openblas-dlinpack.goto', 'openblas-zsymm.goto', 'openblas-chemv.goto', 'openblas-csyr2k.goto', 'openblas-scopy.goto', 'openblas-zdot.goto', 'openblas-sgesv.goto', 'openblas-dcopy.goto', 'openblas-dtrmm.goto', 'openblas-cherk.goto', 'openblas-cgemv.goto', 'openblas-slinpack.goto', 'openblas-dasum.goto', 'openblas-zsyrk.goto', 'openblas-dsymv.goto', 'openblas-ssymm.goto', 'openblas-chemm.goto', 'openblas-csymv.goto', 'openblas-zgetri.goto', 'openblas-dscal.goto', 'tensorflow', 'openblas-izamax.goto', 'openblas-zlinpack.goto', 'openblas-saxpy.goto', 'openblas-dger.goto', 'openblas-cswap.goto', 'openblas-zgemv.goto', 'openblas-dnrm2.goto', 'openblas-zcholesky.goto', 'embree', 'openblas-zgeev.goto', 'eigen-matmat', 'openblas-sgeev.goto', 'openblas-ssyrk.goto', 'openblas-dpotrf.goto', 'openblas-zhemm.goto', 'openblas-cpotrf.goto', 'openblas-zher2k.goto', 'openblas-csymm.goto', 'openblas-dsymm.goto', 'openblas-isamax.goto', 'openblas-zherk.goto', 'openblas-ctrsm.goto', 'openblas-cdot.goto', 'openblas-ccopy.goto', 'openblas-sgetri.goto', 'openblas-dgemv.goto', 'openblas-zcopy.goto', 'openblas-dsyr2k.goto', 'redis-server', 'openblas-caxpy.goto', 'eigen-vecmat', 'openblas-zsyr2k.goto', 'openblas-ssyr2k.goto', 'openssl', 'openblas-sdot.goto', 'openblas-dswap.goto', 'openblas-clinpack.goto', 'ffmpeg', 'openblas-ccholesky.goto', 'openblas-spotrf.goto', 'openblas-dgemm.goto', 'openblas-zger.goto', 'openblas-drot.goto', 'openblas-ddot.goto', 'openblas-dcholesky.goto', 'openblas-cgetri.goto']"
+f30f6f4eb5f30f6f57b5b2b5660fefd1660f3817c2,199.0,"	.text
+	movdqu	xmm1, xmmword ptr [rsi - 75]
+	movdqu	xmm2, xmmword ptr [rdi - 75]
+	mov	dl, -75
+	pxor	xmm2, xmm1
+	ptest	xmm0, xmm2
+
+",Scalar/Vec,2.0,198.5142364501953,0.0024410228633401,5,2,0,1.25,0.371859296482412,"[[189, 1, 7, 2, 9, 10, 3, 62, 5], [189, 1, 7, 8, 9, 10, 3, 69, 5], [14, 1, 9, 3, 51, 5], [137, 1, 62, 69, 3, 69, 5], [405, 1, 38, 69, 3, 5]]",1.5,['1_4_RAW'],"['clang', 'tensorflow']"
+4889eb4531ed0f1f8000000000488b5b084885db,131.0,"	.text
+	mov	rbx, rbp
+	xor	r13d, r13d
+	nop	dword ptr [rax]
+	mov	rbx, qword ptr [rbx + 8]
+	test	rbx, rbx
+
+",Scalar,1.33,137.072998046875,0.046358763716603,5,2,0,1.25,0.0458015267175572,"[[0, 1, 23, 3, 41, 5], [43, 1, 57, 57, 3, 57, 5], [42, 1, 7, 15, 10, 3, 5], [6, 1, 7, 41, 9, 10, 3, 41, 5], [25, 1, 41, 41, 3, 5]]",1.25,['num_insts'],['clang']
+4531e44180fa4e410f94c4478d6424ff31db4080ff55,197.0,"	.text
+	xor	r12d, r12d
+	cmp	r10b, 78
+	sete	r12b
+	lea	r12d, [r12 + r12 - 1]
+	xor	ebx, ebx
+	cmp	dil, 85
+
+",Scalar,2.0,204.14407348632807,0.0362643324179089,6,1,0,1.5,0.2385786802030456,"[[43, 1, 21, 21, 3, 21, 5], [13, 1, 294, 9, 3, 5], [112, 1, 3, 149, 5], [33, 1, 7, 45, 45, 9, 10, 3, 21, 5], [43, 1, 27, 27, 3, 27, 5], [13, 1, 161, 9, 3, 5]]",1.5,"['num_insts', '2_3_RAW']","['openblas-zgeev.goto', 'openblas-cgeev.goto']"
+498b04244c8b7d004c8b68184c89ff4c89ee,147.0,"	.text
+	mov	rax, qword ptr [r12]
+	mov	r15, qword ptr [rbp]
+	mov	r13, qword ptr [rax + 24]
+	mov	rdi, r15
+	mov	rsi, r13
+
+",Ld,1.5,148.8788604736328,0.0127813637662096,5,3,0,1.5,0.0204081632653061,"[[6, 1, 7, 45, 10, 3, 15, 5], [6, 1, 7, 23, 10, 3, 30, 5], [6, 1, 7, 15, 9, 10, 3, 19, 5], [0, 1, 30, 3, 8, 5], [0, 1, 19, 3, 2, 5]]",1.25,['num_insts'],['clang']
+428d042b8d54002383e2fc8955888b45883d00020000,198.0,"	.text
+	lea	eax, [rbx + r13]
+	lea	edx, [rax + rax + 35]
+	and	edx, -4
+	mov	dword ptr [rbp - 120], edx
+	mov	eax, dword ptr [rbp - 120]
+	cmp	eax, 512
+
+",Ld/St,2.0,198.9247283935547,0.0046703454219933,6,3,1,1.5,0.2424242424242424,"[[33, 1, 7, 41, 19, 10, 3, 31, 5], [33, 1, 7, 15, 15, 9, 10, 3, 22, 5], [32, 1, 9, 22, 3, 22, 5], [0, 1, 22, 3, 7, 23, 9, 10, 5], [6, 1, 7, 23, 9, 10, 3, 31, 5], [13, 1, 31, 9, 3, 5]]",2.0,['1_3_RAW'],"['openblas-cgetri.goto', 'openblas-cgemv.goto', 'openblas-cgeev.goto']"
+488b04244883c4205b5d415c,202.0,"	.text
+	mov	rax, qword ptr [rsp]
+	add	rsp, 32
+	pop	rbx
+	pop	rbp
+	pop	r12
+
+",Ld,2.0,199.493392944336,0.0124089458201188,5,1,0,1.25,0.3811881188118812,"[[6, 1, 7, 11, 10, 3, 15, 5], [16, 1, 9, 11, 3, 11, 5], [64, 1, 11, 7, 11, 10, 3, 41, 11, 5], [64, 1, 11, 7, 11, 10, 3, 23, 11, 5], [64, 1, 11, 7, 11, 10, 3, 45, 11, 5]]",1.25,['num_insts'],['ffmpeg']
+448b7d78488b457049c1e7044a8d34384989c7498d46104939f748897424084889442458,233.0,"	.text
+	mov	r15d, dword ptr [rbp + 120]
+	mov	rax, qword ptr [rbp + 112]
+	shl	r15, 4
+	lea	rsi, [rax + r15]
+	mov	r15, rax
+	lea	rax, [r14 + 16]
+	cmp	r15, rsi
+	mov	qword ptr [rsp + 8], rsi
+	mov	qword ptr [rsp + 88], rax
+
+",St,2.33,252.2991638183593,0.0828290292633447,9,4,2,2.25,0.0343347639484978,"[[6, 1, 7, 23, 9, 10, 3, 39, 5], [6, 1, 7, 23, 9, 10, 3, 15, 5], [34, 1, 9, 30, 3, 30, 5], [33, 1, 7, 15, 30, 10, 3, 2, 5], [0, 1, 15, 3, 30, 5], [33, 1, 7, 17, 9, 10, 3, 15, 5], [13, 1, 30, 2, 3, 5], [0, 1, 2, 3, 7, 11, 9, 10, 5], [0, 1, 15, 3, 7, 11, 9, 10, 5]]",2.25,['num_insts'],['clang']
+488d45104c89ca48894424504889d84829d048c1f804483b442418,199.0,"	.text
+	lea	rax, [rbp + 16]
+	mov	rdx, r9
+	mov	qword ptr [rsp + 80], rax
+	mov	rax, rbx
+	sub	rax, rdx
+	sar	rax, 4
+	cmp	rax, qword ptr [rsp + 24]
+
+",Scalar,2.0,196.00489807128903,0.0150507634608591,7,2,1,1.75,0.1206030150753768,"[[33, 1, 7, 23, 9, 10, 3, 15, 5], [0, 1, 47, 3, 4, 5], [0, 1, 15, 3, 7, 11, 9, 10, 5], [0, 1, 41, 3, 15, 5], [35, 1, 4, 15, 3, 15, 5], [56, 1, 9, 15, 3, 15, 5], [13, 1, 15, 7, 11, 9, 10, 3, 5]]",1.75,['num_insts'],['clang']
+84c0488b4c2408448b442414488b542418,149.0,"	.text
+	test	al, al
+	mov	rcx, qword ptr [rsp + 8]
+	mov	r8d, dword ptr [rsp + 20]
+	mov	rdx, qword ptr [rsp + 24]
+
+",Ld,1.5,150.154052734375,0.0077453203649328,4,3,0,1.5,0.0067114093959731,"[[25, 1, 58, 58, 3, 5], [6, 1, 7, 11, 9, 10, 3, 20, 5], [6, 1, 7, 11, 9, 10, 3, 18, 5], [6, 1, 7, 11, 9, 10, 3, 4, 5]]",1.0,['num_insts'],['clang']
+488b8424d0000000be010000008b0085c0,105.0,"	.text
+	mov	rax, qword ptr [rsp + 208]
+	mov	esi, 1
+	mov	eax, dword ptr [rax]
+	test	eax, eax
+
+",Ld,1.06,111.80589294433594,0.0648180280412946,4,2,0,1.0,0.0476190476190476,"[[6, 1, 7, 11, 9, 10, 3, 15, 5], [14, 1, 9, 3, 24, 5], [6, 1, 7, 15, 10, 3, 31, 5], [25, 1, 31, 31, 3, 5]]",1.0,"['num_insts', '0_2_RAW']",['openblas-sgeev.goto']
+4189c5488945a841c1e5064183ed34,100.0,"	.text
+	mov	r13d, eax
+	mov	qword ptr [rbp - 88], rax
+	shl	r13d, 6
+	sub	r13d, 52
+
+",St,1.0,99.1125946044922,0.0088740539550779,4,0,1,1.0,0.0,"[[0, 1, 31, 3, 57, 5], [0, 1, 15, 3, 7, 23, 9, 10, 5], [34, 1, 9, 57, 3, 57, 5], [35, 1, 9, 57, 3, 57, 5]]",1.0,"['num_insts', 'inst_1']","['openblas-zpotrf.goto', 'openblas-sgemm.goto', 'openblas-dsyrk.goto', 'openblas-cger.goto', 'openblas-icamax.goto', 'openblas-sasum.goto', 'openblas-strmm.goto', 'openblas-zscal.goto', 'openblas-csyrk.goto', 'openblas-sger.goto', 'openblas-idamax.goto', 'openblas-dgeev.goto', 'openblas-dtrsm.goto', 'openblas-ztrmm.goto', 'openblas-scholesky.goto', 'openblas-dgetri.goto', 'openblas-snrm2.goto', 'openblas-sgemv.goto', 'openblas-ztrsm.goto', 'openblas-zgemm.goto', 'openblas-ssymv.goto', 'openblas-cgeev.goto', 'openblas-daxpy.goto', 'openblas-srot.goto', 'openblas-cgemm.goto', 'openblas-zgesv.goto', 'openblas-strsm.goto', 'openblas-cgesv.goto', 'openblas-zhemv.goto', 'openblas-cher2k.goto', 'openblas-zasum.goto', 'openblas-sscal.goto', 'openblas-dznrm2.goto', 'openblas-zswap.goto', 'openblas-casum.goto', 'openblas-dgesv.goto', 'openblas-ctrmm.goto', 'openblas-scnrm2.goto', 'openblas-zsymv.goto', 'openblas-zaxpy.goto', 'openblas-sswap.goto', 'openblas-cscal.goto', 'openblas-dlinpack.goto', 'openblas-zsymm.goto', 'openblas-chemv.goto', 'openblas-csyr2k.goto', 'openblas-scopy.goto', 'openblas-zdot.goto', 'openblas-sgesv.goto', 'openblas-dcopy.goto', 'openblas-dtrmm.goto', 'openblas-cherk.goto', 'openblas-cgemv.goto', 'openblas-slinpack.goto', 'openblas-dasum.goto', 'openblas-zsyrk.goto', 'openblas-dsymv.goto', 'openblas-ssymm.goto', 'openblas-chemm.goto', 'openblas-csymv.goto', 'openblas-zgetri.goto', 'openblas-dscal.goto', 'tensorflow', 'openblas-izamax.goto', 'openblas-zlinpack.goto', 'openblas-saxpy.goto', 'openblas-dger.goto', 'openblas-cswap.goto', 'openblas-zgemv.goto', 'openblas-dnrm2.goto', 'openblas-zcholesky.goto', 'embree', 'openblas-zgeev.goto', 'eigen-matmat', 'openblas-sgeev.goto', 'openblas-ssyrk.goto', 'openblas-dpotrf.goto', 'openblas-zhemm.goto', 'openblas-cpotrf.goto', 'openblas-zher2k.goto', 'openblas-csymm.goto', 'openblas-dsymm.goto', 'openblas-isamax.goto', 'openblas-zherk.goto', 'openblas-ctrsm.goto', 'openblas-cdot.goto', 'openblas-ccopy.goto', 'openblas-sgetri.goto', 'openblas-dgemv.goto', 'openblas-zcopy.goto', 'openblas-dsyr2k.goto', 'redis-server', 'openblas-caxpy.goto', 'eigen-vecmat', 'openblas-zsyr2k.goto', 'openblas-ssyr2k.goto', 'openssl', 'openblas-sdot.goto', 'openblas-dswap.goto', 'openblas-clinpack.goto', 'ffmpeg', 'openblas-ccholesky.goto', 'openblas-spotrf.goto', 'openblas-dgemm.goto', 'openblas-zger.goto', 'openblas-drot.goto', 'openblas-ddot.goto', 'openblas-dcholesky.goto', 'openblas-cgetri.goto']"
+498b4c245089c28b712083fe40,123.0,"	.text
+	mov	rcx, qword ptr [r12 + 80]
+	mov	edx, eax
+	mov	esi, dword ptr [rcx + 32]
+	cmp	esi, 64
+
+",Ld,1.25,108.80703735351562,0.1153899402153201,4,2,0,1.0,0.1869918699186991,"[[6, 1, 7, 45, 9, 10, 3, 20, 5], [0, 1, 31, 3, 22, 5], [6, 1, 7, 20, 9, 10, 3, 24, 5], [13, 1, 24, 9, 3, 5]]",1.0,"['num_insts', '0_2_RAW']",['clang']
+488b8424a8020000448b38488b8424b00200008b08488b8424e8020000448b104585d2,300.0,"	.text
+	mov	rax, qword ptr [rsp + 680]
+	mov	r15d, dword ptr [rax]
+	mov	rax, qword ptr [rsp + 688]
+	mov	ecx, dword ptr [rax]
+	mov	rax, qword ptr [rsp + 744]
+	mov	r10d, dword ptr [rax]
+	test	r10d, r10d
+
+",Ld,3.0,309.5577087402344,0.0318590291341145,7,6,0,3.0,0.0,"[[6, 1, 7, 11, 9, 10, 3, 15, 5], [6, 1, 7, 15, 10, 3, 39, 5], [6, 1, 7, 11, 9, 10, 3, 15, 5], [6, 1, 7, 15, 10, 3, 12, 5], [6, 1, 7, 11, 9, 10, 3, 15, 5], [6, 1, 7, 15, 10, 3, 48, 5], [25, 1, 48, 48, 3, 5]]",1.75,['num_insts'],['openblas-dgeev.goto']
+c5fa117804c4c17a1110c4c17a117004c5fa110fc5fa116f04c5fa1106c5fa116604,698.0,"	.text
+	vmovss	dword ptr [rax + 4], xmm7
+	vmovss	dword ptr [r8], xmm2
+	vmovss	dword ptr [r8 + 4], xmm6
+	vmovss	dword ptr [rdi], xmm1
+	vmovss	dword ptr [rdi + 4], xmm5
+	vmovss	dword ptr [rsi], xmm0
+	vmovss	dword ptr [rsi + 4], xmm4
+
+",Scalar/Vec,7.0,774.7747802734375,0.1099925218817156,7,0,7,7.0,0.0028653295128939,"[[131, 1, 101, 3, 7, 15, 9, 10, 5], [131, 1, 69, 3, 7, 53, 10, 5], [131, 1, 81, 3, 7, 53, 9, 10, 5], [131, 1, 62, 3, 7, 8, 10, 5], [131, 1, 83, 3, 7, 8, 9, 10, 5], [131, 1, 38, 3, 7, 2, 10, 5], [131, 1, 80, 3, 7, 2, 9, 10, 5]]",1.75,['num_insts'],"['openblas-slinpack.goto', 'openblas-sgetri.goto', 'openblas-sgesv.goto']"
+4c893f488947084883c2014585e489d789942498000000,355.0,"	.text
+	mov	qword ptr [rdi], r15
+	mov	qword ptr [rdi + 8], rax
+	add	rdx, 1
+	test	r12d, r12d
+	mov	edi, edx
+	mov	dword ptr [rsp + 152], edx
+
+",St,3.0,301.8290710449219,0.1497772646621919,6,0,3,3.0,0.1549295774647887,"[[0, 1, 30, 3, 7, 8, 10, 5], [0, 1, 15, 3, 7, 8, 9, 10, 5], [16, 1, 9, 4, 3, 4, 5], [25, 1, 21, 21, 3, 5], [0, 1, 22, 3, 44, 5], [0, 1, 22, 3, 7, 11, 9, 10, 5]]",1.5,['num_insts'],['clang']
+0fb643124889df83e0f709e8884312488b030fb7400266894310,698.0,"	.text
+	movzx	eax, byte ptr [rbx + 18]
+	mov	rdi, rbx
+	and	eax, -9
+	or	eax, ebp
+	mov	byte ptr [rbx + 18], al
+	mov	rax, qword ptr [rbx]
+	movzx	eax, word ptr [rax + 2]
+	mov	word ptr [rbx + 16], ax
+
+",Ld/St,7.0,664.780517578125,0.0475923816932306,8,3,2,2.0,0.7134670487106017,"[[46, 1, 7, 41, 9, 10, 3, 31, 5], [0, 1, 41, 3, 8, 5], [32, 1, 9, 31, 3, 31, 5], [49, 1, 93, 31, 3, 31, 5], [0, 1, 58, 3, 7, 41, 9, 10, 5], [6, 1, 7, 41, 10, 3, 15, 5], [46, 1, 7, 15, 9, 10, 3, 31, 5], [0, 1, 122, 3, 7, 41, 9, 10, 5]]",2.0,['num_insts'],['clang']
+41be01000000c4c16a2ad2488b8424500100004139f2c4a17a115488fc,299.0,"	.text
+	mov	r14d, 1
+	vcvtsi2ss	xmm2, xmm2, r10d
+	mov	rax, qword ptr [rsp + 336]
+	cmp	r10d, esi
+	vmovss	dword ptr [rax + 4*r9 - 4], xmm2
+
+",Vec,3.0,178.513427734375,0.4029651246341973,5,1,1,1.25,0.5819397993311037,"[[14, 1, 9, 3, 40, 5], [281, 1, 69, 48, 3, 69, 5], [6, 1, 7, 11, 9, 10, 3, 15, 5], [13, 1, 48, 24, 3, 5], [131, 1, 69, 3, 7, 15, 47, 9, 10, 5]]",2.0,['1_4_RAW'],['openblas-cgeev.goto']
+488d47184889442440488b73e84c8db42400020000488d8424a00000004c89f74889842400020000,249.0,"	.text
+	lea	rax, [rdi + 24]
+	mov	qword ptr [rsp + 64], rax
+	mov	rsi, qword ptr [rbx - 24]
+	lea	r14, [rsp + 512]
+	lea	rax, [rsp + 160]
+	mov	rdi, r14
+	mov	qword ptr [rsp + 512], rax
+
+",St,2.5,238.5778961181641,0.0418558388828751,7,4,2,2.0,0.1967871485943775,"[[33, 1, 7, 8, 9, 10, 3, 15, 5], [0, 1, 15, 3, 7, 11, 9, 10, 5], [6, 1, 7, 41, 9, 10, 3, 2, 5], [33, 1, 7, 11, 9, 10, 3, 17, 5], [33, 1, 7, 11, 9, 10, 3, 15, 5], [0, 1, 17, 3, 8, 5], [0, 1, 15, 3, 7, 11, 9, 10, 5]]",1.75,['num_insts'],['clang']
+0f57c90f57d20f57db66450f74ff66410f73d70148c1e2034883ee804883fa08,199.0,"	.text
+	xorps	xmm1, xmm1
+	xorps	xmm2, xmm2
+	xorps	xmm3, xmm3
+	pcmpeqb	xmm15, xmm15
+	psrlq	xmm15, 1
+	shl	rdx, 3
+	sub	rsi, -128
+	cmp	rdx, 8
+
+",Vec,2.0,220.63319396972656,0.1087095174358118,8,0,0,2.0,0.0050251256281407,"[[150, 1, 62, 62, 3, 62, 5], [150, 1, 69, 69, 3, 69, 5], [150, 1, 102, 102, 3, 102, 5], [239, 1, 160, 160, 3, 160, 5], [424, 1, 9, 160, 3, 160, 5], [34, 1, 9, 4, 3, 4, 5], [35, 1, 9, 2, 3, 2, 5], [13, 1, 4, 9, 3, 5]]",2.0,['num_insts'],['openblas-dasum.goto']
+4889c848ba4378b471c45a7c0a48c1e80548f7e248c1ea074869d2a08601004839d1,208.0,"	.text
+	mov	rax, rcx
+	movabs	rdx, 755578637259143235
+	shr	rax, 5
+	mul	rdx
+	shr	rdx, 7
+	imul	rdx, rdx, 100000
+	cmp	rcx, rdx
+
+",Scalar,2.12,249.27037048339844,0.1984152427086463,7,0,0,1.75,0.1586538461538461,"[[0, 1, 20, 3, 15, 5], [14, 1, 9, 3, 4, 5], [50, 1, 9, 15, 3, 15, 5], [299, 1, 4, 15, 3, 4, 15, 5], [50, 1, 9, 4, 3, 4, 5], [28, 1, 4, 9, 3, 4, 5], [13, 1, 20, 4, 3, 5]]",1.75,['num_insts'],['ffmpeg']
+4c89c64883c660c5dd57e4c5d557edc5cd57f6c5c557ff4c89e048c1f803,198.0,"	.text
+	mov	rsi, r8
+	add	rsi, 96
+	vxorpd	ymm4, ymm4, ymm4
+	vxorpd	ymm5, ymm5, ymm5
+	vxorpd	ymm6, ymm6, ymm6
+	vxorpd	ymm7, ymm7, ymm7
+	mov	rax, r12
+	sar	rax, 3
+
+",Vec,2.0,227.911361694336,0.1510674833047272,8,0,0,2.0,0.0101010101010101,"[[0, 1, 53, 3, 2, 5], [16, 1, 9, 2, 3, 2, 5], [154, 1, 92, 92, 3, 92, 5], [154, 1, 87, 87, 3, 87, 5], [154, 1, 86, 86, 3, 86, 5], [154, 1, 74, 74, 3, 74, 5], [0, 1, 45, 3, 15, 5], [56, 1, 9, 15, 3, 15, 5]]",2.0,['num_insts'],"['openblas-dgeev.goto', 'openblas-dsymm.goto', 'openblas-dsyr2k.goto', 'openblas-dsyrk.goto', 'openblas-dgetri.goto', 'openblas-dpotrf.goto', 'openblas-dcholesky.goto', 'openblas-dlinpack.goto', 'openblas-dgemm.goto', 'openblas-dgesv.goto']"
+8b4b18894b0401ca4183f8034863d24989d1,209.0,"	.text
+	mov	ecx, dword ptr [rbx + 24]
+	mov	dword ptr [rbx + 4], ecx
+	add	edx, ecx
+	cmp	r8d, 3
+	movsxd	rdx, edx
+	mov	r9, rdx
+
+",Ld/St,2.0,188.06532287597656,0.1001659192537006,6,1,1,1.5,0.2822966507177033,"[[6, 1, 7, 41, 9, 10, 3, 12, 5], [0, 1, 12, 3, 7, 41, 9, 10, 5], [16, 1, 12, 22, 3, 22, 5], [13, 1, 18, 9, 3, 5], [29, 1, 22, 3, 4, 5], [0, 1, 4, 3, 47, 5]]",1.5,"['num_insts', '0_1_RAW']",['ffmpeg']
+8b43144889d925ffffff0f488d044048c1e0034829c1488b6930807d100d,227.0,"	.text
+	mov	eax, dword ptr [rbx + 20]
+	mov	rcx, rbx
+	and	eax, 268435455
+	lea	rax, [rax + 2*rax]
+	shl	rax, 3
+	sub	rcx, rax
+	mov	rbp, qword ptr [rcx + 48]
+	cmp	byte ptr [rbp + 16], 13
+
+",Ld,2.15,228.7764587402344,0.0078258094283453,8,4,0,2.0,0.118942731277533,"[[6, 1, 7, 41, 9, 10, 3, 31, 5], [0, 1, 41, 3, 20, 5], [32, 1, 9, 31, 3, 31, 5], [33, 1, 7, 15, 15, 10, 3, 15, 5], [34, 1, 9, 15, 3, 15, 5], [35, 1, 15, 20, 3, 20, 5], [6, 1, 7, 20, 9, 10, 3, 23, 5], [13, 1, 7, 23, 9, 10, 9, 3, 5]]",2.0,['num_insts'],['clang']
+488b7c2478488db424080100004c89f231c0,111.0,"	.text
+	mov	rdi, qword ptr [rsp + 120]
+	lea	rsi, [rsp + 264]
+	mov	rdx, r14
+	xor	eax, eax
+
+",Ld,1.13,104.6207275390625,0.057470923071509,4,2,0,1.0,0.0990990990990991,"[[6, 1, 7, 11, 9, 10, 3, 8, 5], [33, 1, 7, 11, 9, 10, 3, 2, 5], [0, 1, 17, 3, 4, 5], [43, 1, 31, 31, 3, 31, 5]]",1.0,['num_insts'],['openblas-dgeev.goto']
+448b6c2420448b7424180f1f4000488dbc24e00100004489fe,156.0,"	.text
+	mov	r13d, dword ptr [rsp + 32]
+	mov	r14d, dword ptr [rsp + 24]
+	nop	dword ptr [rax]
+	lea	rdi, [rsp + 480]
+	mov	esi, r15d
+
+",Scalar/Vec,1.5,159.29054260253906,0.0210932218111478,5,4,0,2.0,0.282051282051282,"[[6, 1, 7, 11, 9, 10, 3, 57, 5], [6, 1, 7, 11, 9, 10, 3, 40, 5], [42, 1, 7, 15, 10, 3, 5], [33, 1, 7, 11, 9, 10, 3, 8, 5], [0, 1, 39, 3, 24, 5]]",1.25,['num_insts'],['sqlite']
+4183ac24c40000000148890144895108418bb424c80000004d8b8c24b800000085f6,598.0,"	.text
+	sub	dword ptr [r12 + 196], 1
+	mov	qword ptr [rcx], rax
+	mov	dword ptr [rcx + 8], r10d
+	mov	esi, dword ptr [r12 + 200]
+	mov	r9, qword ptr [r12 + 184]
+	test	esi, esi
+
+",Ld/St,6.0,597.1025390625,0.0015007707984949,6,3,3,3.0,0.4983277591973244,"[[35, 1, 9, 7, 45, 9, 10, 3, 7, 45, 9, 10, 5], [0, 1, 15, 3, 7, 20, 10, 5], [0, 1, 48, 3, 7, 20, 9, 10, 5], [6, 1, 7, 45, 9, 10, 3, 24, 5], [6, 1, 7, 45, 9, 10, 3, 47, 5], [25, 1, 24, 24, 3, 5]]",1.5,['num_insts'],['clang']
+488b442458c644244f00488b68204883c018488944244048396c2440488d44247c4889442430,297.0,"	.text
+	mov	rax, qword ptr [rsp + 88]
+	mov	byte ptr [rsp + 79], 0
+	mov	rbp, qword ptr [rax + 32]
+	add	rax, 24
+	mov	qword ptr [rsp + 64], rax
+	cmp	qword ptr [rsp + 64], rbp
+	lea	rax, [rsp + 124]
+	mov	qword ptr [rsp + 48], rax
+
+",Ld/St,3.0,324.97442626953125,0.0941899874394991,8,4,3,3.0,0.01010101010101,"[[6, 1, 7, 11, 9, 10, 3, 15, 5], [0, 1, 9, 3, 7, 11, 9, 10, 5], [6, 1, 7, 15, 9, 10, 3, 23, 5], [16, 1, 9, 15, 3, 15, 5], [0, 1, 15, 3, 7, 11, 9, 10, 5], [13, 1, 7, 11, 9, 10, 23, 3, 5], [33, 1, 7, 11, 9, 10, 3, 15, 5], [0, 1, 15, 3, 7, 11, 9, 10, 5]]",2.0,['num_insts'],['clang']
+488bb530feffff4c8b8d38feffff488b4608488b40784885c0,218.0,"	.text
+	mov	rsi, qword ptr [rbp - 464]
+	mov	r9, qword ptr [rbp - 456]
+	mov	rax, qword ptr [rsi + 8]
+	mov	rax, qword ptr [rax + 120]
+	test	rax, rax
+
+",Ld,1.98,193.78219604492188,0.1110908438306336,5,4,0,2.0,0.0825688073394496,"[[6, 1, 7, 23, 9, 10, 3, 2, 5], [6, 1, 7, 23, 9, 10, 3, 47, 5], [6, 1, 7, 2, 9, 10, 3, 15, 5], [6, 1, 7, 15, 9, 10, 3, 15, 5], [25, 1, 15, 15, 3, 5]]",1.25,['num_insts'],['tensorflow']
+49637f784d897c24084c89e1458974242041c74424280000000041c74424240000000085ff,400.0,"	.text
+	movsxd	rdi, dword ptr [r15 + 120]
+	mov	qword ptr [r12 + 8], r15
+	mov	rcx, r12
+	mov	dword ptr [r12 + 32], r14d
+	mov	dword ptr [r12 + 40], 0
+	mov	dword ptr [r12 + 36], 0
+	test	edi, edi
+
+",St,4.0,400.43890380859375,0.0010972595214843,7,1,4,4.0,0.0,"[[29, 1, 7, 30, 9, 10, 3, 8, 5], [0, 1, 30, 3, 7, 45, 9, 10, 5], [0, 1, 45, 3, 20, 5], [0, 1, 40, 3, 7, 45, 9, 10, 5], [0, 1, 9, 3, 7, 45, 9, 10, 5], [0, 1, 9, 3, 7, 45, 9, 10, 5], [25, 1, 44, 44, 3, 5]]",1.75,['num_insts'],['ffmpeg']
+31d24489f841f7f685d2,897.0,"	.text
+	xor	edx, edx
+	mov	eax, r15d
+	div	r14d
+	test	edx, edx
+
+",Scalar/Vec,9.0,902.529541015625,0.0061644827375975,4,0,0,1.0,0.8885172798216276,"[[43, 1, 22, 22, 3, 22, 5], [0, 1, 39, 3, 31, 5], [181, 1, 40, 22, 31, 3, 22, 31, 5], [25, 1, 22, 22, 3, 5]]",9.0,['inst_2'],['clang']
+4989ec4889c5448b7520488d7d184183fe40,131.0,"	.text
+	mov	r12, rbp
+	mov	rbp, rax
+	mov	r14d, dword ptr [rbp + 32]
+	lea	rdi, [rbp + 24]
+	cmp	r14d, 64
+
+",Scalar,1.33,132.80914306640625,0.0138102524153148,5,2,0,1.25,0.0458015267175572,"[[0, 1, 23, 3, 45, 5], [0, 1, 15, 3, 23, 5], [6, 1, 7, 23, 9, 10, 3, 40, 5], [33, 1, 7, 23, 9, 10, 3, 8, 5], [13, 1, 40, 9, 3, 5]]",1.25,['num_insts'],['clang']
+4c8d54243048c1e204c744243800000000498d041748c1ea04c744243c04000000498d72104883fa044989d04889742430,304.0,"	.text
+	lea	r10, [rsp + 48]
+	shl	rdx, 4
+	mov	dword ptr [rsp + 56], 0
+	lea	rax, [r15 + rdx]
+	shr	rdx, 4
+	mov	dword ptr [rsp + 60], 4
+	lea	rsi, [r10 + 16]
+	cmp	rdx, 4
+	mov	r8, rdx
+	mov	qword ptr [rsp + 48], rsi
+
+",St,3.05,320.58624267578125,0.054560008801912,10,3,3,3.0,0.0131578947368421,"[[33, 1, 7, 11, 9, 10, 3, 66, 5], [34, 1, 9, 4, 3, 4, 5], [0, 1, 9, 3, 7, 11, 9, 10, 5], [33, 1, 7, 30, 4, 10, 3, 15, 5], [50, 1, 9, 4, 3, 4, 5], [0, 1, 9, 3, 7, 11, 9, 10, 5], [33, 1, 7, 66, 9, 10, 3, 2, 5], [13, 1, 4, 9, 3, 5], [0, 1, 4, 3, 53, 5], [0, 1, 2, 3, 7, 11, 9, 10, 5]]",2.5,['num_insts'],['clang']
+4c8b6c24484c03ac24a0000000488bac24800000004c8bb424a80000004883bc249000000000,246.0,"	.text
+	mov	r13, qword ptr [rsp + 72]
+	add	r13, qword ptr [rsp + 160]
+	mov	rbp, qword ptr [rsp + 128]
+	mov	r14, qword ptr [rsp + 168]
+	cmp	qword ptr [rsp + 144], 0
+
+",Ld,2.49,247.6052398681641,0.0065253653177402,5,5,0,2.5,0.016260162601626,"[[6, 1, 7, 11, 9, 10, 3, 19, 5], [16, 1, 7, 11, 9, 10, 19, 3, 19, 5], [6, 1, 7, 11, 9, 10, 3, 23, 5], [6, 1, 7, 11, 9, 10, 3, 17, 5], [13, 1, 7, 11, 9, 10, 9, 3, 5]]",1.25,['num_insts'],"['openblas-sgemv.goto', 'openblas-sgeev.goto', 'openblas-slinpack.goto', 'openblas-sgetri.goto']"
+418b0e4883ec08488d50044c89ee4c89e7488945a0488955b0488955a889086a00,578.0,"	.text
+	mov	ecx, dword ptr [r14]
+	sub	rsp, 8
+	lea	rdx, [rax + 4]
+	mov	rsi, r13
+	mov	rdi, r12
+	mov	qword ptr [rbp - 96], rax
+	mov	qword ptr [rbp - 80], rdx
+	mov	qword ptr [rbp - 88], rdx
+	mov	dword ptr [rax], ecx
+	push	0
+
+",St,5.0,523.091064453125,0.0949981583855968,10,2,4,4.0,0.3079584775086506,"[[6, 1, 7, 17, 10, 3, 12, 5], [35, 1, 9, 11, 3, 11, 5], [33, 1, 7, 15, 9, 10, 3, 4, 5], [0, 1, 19, 3, 2, 5], [0, 1, 45, 3, 8, 5], [0, 1, 15, 3, 7, 23, 9, 10, 5], [0, 1, 4, 3, 7, 23, 9, 10, 5], [0, 1, 4, 3, 7, 23, 9, 10, 5], [0, 1, 12, 3, 7, 15, 10, 5], [96, 1, 9, 11, 3, 11, 7, 11, 9, 10, 5]]",2.5,['num_insts'],['tensorflow']
+4c89c34c89f24889d848f7f54889c34989d04c89e848f7e30f1f80000000004c39c2,9169.0,"	.text
+	mov	rbx, r8
+	mov	rdx, r14
+	mov	rax, rbx
+	div	rbp
+	mov	rbx, rax
+	mov	r8, rdx
+	mov	rax, r13
+	mul	rbx
+	nop	dword ptr [rax]
+	cmp	rdx, r8
+
+",Scalar/Vec,32.17,2395.299072265625,0.7387611438253218,10,1,0,2.5,0.9727342131093905,"[[0, 1, 53, 3, 41, 5], [0, 1, 17, 3, 4, 5], [0, 1, 41, 3, 15, 5], [181, 1, 23, 4, 15, 3, 4, 15, 5], [0, 1, 15, 3, 41, 5], [0, 1, 4, 3, 53, 5], [0, 1, 19, 3, 15, 5], [299, 1, 41, 15, 3, 4, 15, 5], [42, 1, 7, 15, 10, 3, 5], [13, 1, 4, 53, 3, 5]]",21.0,['inst_3'],['embree']
+488b542408be18000000b811010000488dbae0020000,135.0,"	.text
+	mov	rdx, qword ptr [rsp + 8]
+	mov	esi, 24
+	mov	eax, 273
+	lea	rdi, [rdx + 736]
+
+",Ld,1.38,130.02224731445312,0.036872242115162,4,2,0,1.0,0.2592592592592593,"[[6, 1, 7, 11, 9, 10, 3, 4, 5], [14, 1, 9, 3, 24, 5], [14, 1, 9, 3, 31, 5], [33, 1, 7, 4, 9, 10, 3, 8, 5]]",1.0,"['num_insts', '0_3_RAW']","['openblas-zpotrf.goto', 'openblas-sgemm.goto', 'openblas-dsyrk.goto', 'openblas-cger.goto', 'openblas-strmm.goto', 'openblas-zscal.goto', 'openblas-csyrk.goto', 'openblas-sger.goto', 'openblas-dgeev.goto', 'openblas-dtrsm.goto', 'openblas-ztrmm.goto', 'openblas-scholesky.goto', 'openblas-dgetri.goto', 'openblas-sgemv.goto', 'openblas-ztrsm.goto', 'openblas-zgemm.goto', 'openblas-ssymv.goto', 'openblas-cgeev.goto', 'openblas-daxpy.goto', 'openblas-cgemm.goto', 'openblas-zgesv.goto', 'openblas-strsm.goto', 'openblas-cgesv.goto', 'openblas-zhemv.goto', 'openblas-cher2k.goto', 'openblas-sscal.goto', 'openblas-dgesv.goto', 'openblas-ctrmm.goto', 'openblas-zaxpy.goto', 'openblas-cscal.goto', 'openblas-dlinpack.goto', 'openblas-zsymm.goto', 'openblas-chemv.goto', 'openblas-csyr2k.goto', 'openblas-sgesv.goto', 'openblas-dtrmm.goto', 'openblas-cherk.goto', 'openblas-cgemv.goto', 'openblas-slinpack.goto', 'openblas-zsyrk.goto', 'openblas-dsymv.goto', 'openblas-ssymm.goto', 'openblas-chemm.goto', 'openblas-zgetri.goto', 'openblas-dscal.goto', 'tensorflow', 'openblas-zlinpack.goto', 'openblas-saxpy.goto', 'openblas-dger.goto', 'openblas-zgemv.goto', 'openblas-zcholesky.goto', 'openblas-zgeev.goto', 'openblas-sgeev.goto', 'openblas-ssyrk.goto', 'openblas-dpotrf.goto', 'openblas-zhemm.goto', 'openblas-cpotrf.goto', 'openblas-zher2k.goto', 'openblas-csymm.goto', 'openblas-dsymm.goto', 'openblas-zherk.goto', 'openblas-ctrsm.goto', 'openblas-sgetri.goto', 'openblas-dgemv.goto', 'openblas-dsyr2k.goto', 'redis-server', 'openblas-caxpy.goto', 'openblas-zsyr2k.goto', 'openblas-ssyr2k.goto', 'openblas-clinpack.goto', 'ffmpeg', 'openblas-ccholesky.goto', 'openblas-spotrf.goto', 'openblas-dgemm.goto', 'openblas-zger.goto', 'openblas-ddot.goto', 'openblas-dcholesky.goto', 'openblas-cgetri.goto']"
+41544989d455534889d34883ec404983e4fe,314.0,"	.text
+	push	r12
+	mov	r12, rdx
+	push	rbp
+	push	rbx
+	mov	rbx, rdx
+	sub	rsp, 64
+	and	r12, -2
+
+",St,3.0,317.107666015625,0.0098970255274681,7,0,0,1.75,0.4426751592356688,"[[36, 1, 45, 11, 3, 11, 7, 11, 9, 10, 5], [0, 1, 4, 3, 45, 5], [36, 1, 23, 11, 3, 11, 7, 11, 9, 10, 5], [36, 1, 41, 11, 3, 11, 7, 11, 9, 10, 5], [0, 1, 4, 3, 41, 5], [35, 1, 9, 11, 3, 11, 5], [32, 1, 9, 45, 3, 45, 5]]",1.75,['num_insts'],['clang']
+488b84248000000031f6c784245003000000000000c7842454030000040000004883c0584889842448030000488d8424400100004889c74889442470,399.0,"	.text
+	mov	rax, qword ptr [rsp + 128]
+	xor	esi, esi
+	mov	dword ptr [rsp + 848], 0
+	mov	dword ptr [rsp + 852], 4
+	add	rax, 88
+	mov	qword ptr [rsp + 840], rax
+	lea	rax, [rsp + 320]
+	mov	rdi, rax
+	mov	qword ptr [rsp + 112], rax
+
+",St,4.0,395.30804443359375,0.0092530214696898,9,2,4,4.0,0.0025062656641603,"[[6, 1, 7, 11, 9, 10, 3, 15, 5], [43, 1, 24, 24, 3, 24, 5], [0, 1, 9, 3, 7, 11, 9, 10, 5], [0, 1, 9, 3, 7, 11, 9, 10, 5], [16, 1, 9, 15, 3, 15, 5], [0, 1, 15, 3, 7, 11, 9, 10, 5], [33, 1, 7, 11, 9, 10, 3, 15, 5], [0, 1, 15, 3, 8, 5], [0, 1, 15, 3, 7, 11, 9, 10, 5]]",2.25,['num_insts'],['clang']
+4c8b22488b6a084c89e0490fafc7488d1cc34c89e0490fafc64d8d6cc5004883fe01,280.0,"	.text
+	mov	r12, qword ptr [rdx]
+	mov	rbp, qword ptr [rdx + 8]
+	mov	rax, r12
+	imul	rax, r15
+	lea	rbx, [rbx + 8*rax]
+	mov	rax, r12
+	imul	rax, r14
+	lea	r13, [r13 + 8*rax]
+	cmp	rsi, 1
+
+",Scalar/Vec,3.0,243.0242614746093,0.1320562090192524,9,4,0,2.25,0.1964285714285713,"[[6, 1, 7, 4, 10, 3, 45, 5], [6, 1, 7, 4, 9, 10, 3, 23, 5], [0, 1, 45, 3, 15, 5], [28, 1, 30, 15, 3, 15, 5], [33, 1, 7, 41, 15, 10, 3, 41, 5], [0, 1, 45, 3, 15, 5], [28, 1, 17, 15, 3, 15, 5], [33, 1, 7, 19, 15, 10, 3, 19, 5], [13, 1, 2, 9, 3, 5]]",2.25,['num_insts'],['openblas-cgeev.goto']
+4c01c048d1e84d8d0cc3453a11,239.0,"	.text
+	add	rax, r8
+	shr	rax
+	lea	r9, [r11 + 8*rax]
+	cmp	r10b, byte ptr [r9]
+
+",Scalar,3.0,204.3849639892578,0.144832786655825,4,2,0,1.0,0.5815899581589958,"[[16, 1, 53, 15, 3, 15, 5], [50, 1, 9, 15, 3, 15, 5], [33, 1, 7, 65, 15, 10, 3, 47, 5], [13, 1, 294, 7, 47, 10, 3, 5]]",1.0,"['num_insts', '1_2_RAW', '2_3_RAW']","['openblas-zpotrf.goto', 'openblas-sgemm.goto', 'openblas-dsyrk.goto', 'openblas-cger.goto', 'openblas-icamax.goto', 'openblas-sasum.goto', 'openblas-strmm.goto', 'openblas-zscal.goto', 'openblas-csyrk.goto', 'openblas-sger.goto', 'openblas-idamax.goto', 'openblas-dgeev.goto', 'openblas-dtrsm.goto', 'openblas-ztrmm.goto', 'openblas-scholesky.goto', 'openblas-dgetri.goto', 'openblas-snrm2.goto', 'openblas-sgemv.goto', 'openblas-ztrsm.goto', 'openblas-zgemm.goto', 'openblas-ssymv.goto', 'openblas-cgeev.goto', 'openblas-daxpy.goto', 'openblas-srot.goto', 'openblas-cgemm.goto', 'openblas-zgesv.goto', 'openblas-strsm.goto', 'openblas-cgesv.goto', 'openblas-zhemv.goto', 'sqlite', 'openblas-cher2k.goto', 'openblas-zasum.goto', 'openblas-sscal.goto', 'openblas-dznrm2.goto', 'openblas-zswap.goto', 'openblas-casum.goto', 'openblas-dgesv.goto', 'openblas-ctrmm.goto', 'openblas-scnrm2.goto', 'openblas-zsymv.goto', 'openblas-zaxpy.goto', 'gzip-decompress', 'openblas-sswap.goto', 'gzip-compress', 'clang', 'openblas-cscal.goto', 'openblas-dlinpack.goto', 'openblas-zsymm.goto', 'openblas-chemv.goto', 'openblas-csyr2k.goto', 'openblas-scopy.goto', 'openblas-zdot.goto', 'openblas-sgesv.goto', 'openblas-dcopy.goto', 'openblas-dtrmm.goto', 'openblas-cherk.goto', 'openblas-cgemv.goto', 'openblas-slinpack.goto', 'openblas-dasum.goto', 'openblas-zsyrk.goto', 'openblas-dsymv.goto', 'openblas-ssymm.goto', 'openblas-chemm.goto', 'openblas-csymv.goto', 'openblas-zgetri.goto', 'openblas-dscal.goto', 'tensorflow', 'openblas-izamax.goto', 'openblas-zlinpack.goto', 'openblas-saxpy.goto', 'openblas-dger.goto', 'openblas-cswap.goto', 'openblas-zgemv.goto', 'openblas-dnrm2.goto', 'openblas-zcholesky.goto', 'embree', 'openblas-zgeev.goto', 'eigen-matmat', 'openblas-sgeev.goto', 'openblas-ssyrk.goto', 'openblas-dpotrf.goto', 'openblas-zhemm.goto', 'openblas-cpotrf.goto', 'openblas-zher2k.goto', 'openblas-csymm.goto', 'openblas-dsymm.goto', 'openblas-isamax.goto', 'openblas-zherk.goto', 'openblas-ctrsm.goto', 'openblas-cdot.goto', 'openblas-ccopy.goto', 'openblas-sgetri.goto', 'openblas-dgemv.goto', 'openblas-zcopy.goto', 'openblas-dsyr2k.goto', 'redis-server', 'openblas-caxpy.goto', 'eigen-vecmat', 'openblas-zsyr2k.goto', 'openblas-ssyr2k.goto', 'openssl', 'openblas-sdot.goto', 'openblas-dswap.goto', 'openblas-clinpack.goto', 'ffmpeg', 'openblas-ccholesky.goto', 'openblas-spotrf.goto', 'openblas-dgemm.goto', 'openblas-zger.goto', 'openblas-drot.goto', 'openblas-ddot.goto', 'openblas-dcholesky.goto', 'openblas-cgetri.goto']"
+5a5b5d415c415d,253.0,"	.text
+	pop	rdx
+	pop	rbx
+	pop	rbp
+	pop	r12
+	pop	r13
+
+",Ld,2.5,245.7391967773437,0.0286988269670209,5,0,0,1.25,0.5059288537549407,"[[64, 1, 11, 7, 11, 10, 3, 4, 11, 5], [64, 1, 11, 7, 11, 10, 3, 41, 11, 5], [64, 1, 11, 7, 11, 10, 3, 23, 11, 5], [64, 1, 11, 7, 11, 10, 3, 45, 11, 5], [64, 1, 11, 7, 11, 10, 3, 19, 11, 5]]",1.25,['num_insts'],"['redis-server', 'tensorflow', 'ffmpeg']"
+4489e10f28c1488d0c8e4439c2f30f5f01f30f1101,900.0,"	.text
+	mov	ecx, r12d
+	movaps	xmm0, xmm1
+	lea	rcx, [rsi + 4*rcx]
+	cmp	edx, r8d
+	maxss	xmm0, dword ptr [rcx]
+	movss	dword ptr [rcx], xmm0
+
+",Vec,1.5,586.2275390625,0.3486360677083333,6,2,1,1.5,0.8333333333333334,"[[0, 1, 21, 3, 12, 5], [124, 1, 62, 3, 38, 5], [33, 1, 7, 2, 20, 10, 3, 20, 5], [13, 1, 22, 18, 3, 5], [331, 1, 7, 20, 10, 38, 3, 38, 5], [54, 1, 38, 3, 7, 20, 10, 5]]",2.0,['4_5_RAW'],['clang']
+4989d94989e8b9ffe7ff00ba64000000be06000000,131.0,"	.text
+	mov	r9, rbx
+	mov	r8, rbp
+	mov	ecx, 16771071
+	mov	edx, 100
+	mov	esi, 6
+
+",Scalar,1.31,130.98728942871094,9.70272617485687e-05,5,0,0,1.25,0.0458015267175572,"[[0, 1, 41, 3, 47, 5], [0, 1, 23, 3, 53, 5], [14, 1, 9, 3, 12, 5], [14, 1, 9, 3, 22, 5], [14, 1, 9, 3, 24, 5]]",1.25,['num_insts'],['clang']
+4883e88066440f6f0066440fda401066440fda402066440fda403066450f74c366410fd7d085d2,262.0,"	.text
+	sub	rax, -128
+	movdqa	xmm8, xmmword ptr [rax]
+	pminub	xmm8, xmmword ptr [rax + 16]
+	pminub	xmm8, xmmword ptr [rax + 32]
+	pminub	xmm8, xmmword ptr [rax + 48]
+	pcmpeqb	xmm8, xmm11
+	pmovmskb	edx, xmm8
+	test	edx, edx
+
+",Scalar/Vec,2.45,261.6032409667969,0.0015143474549737,8,4,0,2.0,0.2366412213740458,"[[35, 1, 9, 15, 3, 15, 5], [138, 1, 7, 15, 10, 3, 100, 5], [563, 1, 7, 15, 9, 10, 100, 3, 100, 5], [563, 1, 7, 15, 9, 10, 100, 3, 100, 5], [563, 1, 7, 15, 9, 10, 100, 3, 100, 5], [239, 1, 119, 100, 3, 100, 5], [242, 1, 100, 3, 22, 5], [25, 1, 22, 22, 3, 5]]",2.0,['num_insts'],"['redis-server', 'clang', 'tensorflow', 'ffmpeg', 'embree']"
+498b4c2410488b534848c78424600100000000000048c7842468010000ffffffff48c78424700100000000000048c78424780100000000000048c784248001000000000000488b34244c89ef,498.0,"	.text
+	mov	rcx, qword ptr [r12 + 16]
+	mov	rdx, qword ptr [rbx + 72]
+	mov	qword ptr [rsp + 352], 0
+	mov	qword ptr [rsp + 360], -1
+	mov	qword ptr [rsp + 368], 0
+	mov	qword ptr [rsp + 376], 0
+	mov	qword ptr [rsp + 384], 0
+	mov	rsi, qword ptr [rsp]
+	mov	rdi, r13
+
+",Ld/St,5.0,500.0556640625,0.0041278394829317,9,3,5,5.0,0.004016064257028,"[[6, 1, 7, 45, 9, 10, 3, 20, 5], [6, 1, 7, 41, 9, 10, 3, 4, 5], [0, 1, 9, 3, 7, 11, 9, 10, 5], [0, 1, 9, 3, 7, 11, 9, 10, 5], [0, 1, 9, 3, 7, 11, 9, 10, 5], [0, 1, 9, 3, 7, 11, 9, 10, 5], [0, 1, 9, 3, 7, 11, 9, 10, 5], [6, 1, 7, 11, 10, 3, 2, 5], [0, 1, 19, 3, 8, 5]]",2.25,['num_insts'],['clang']
+4889d14883c2084829e94a01bc3150d2ffff4839f2,199.0,"	.text
+	mov	rcx, rdx
+	add	rdx, 8
+	sub	rcx, rbp
+	add	qword ptr [rcx + r14 - 11696], rdi
+	cmp	rdx, rsi
+
+",Scalar,1.99,587.7305908203125,1.9534200543734297,5,1,1,1.25,0.371859296482412,"[[0, 1, 4, 3, 20, 5], [16, 1, 9, 4, 3, 4, 5], [35, 1, 23, 20, 3, 20, 5], [16, 1, 8, 7, 20, 17, 9, 10, 3, 7, 20, 17, 9, 10, 5], [13, 1, 4, 2, 3, 5]]",1.34,"['0_3_RAW', '2_3_RAW']",['ffmpeg']
+c5fa2ac08b44246c8d14004439f2c4c17a1107,298.0,"	.text
+	vcvtsi2ss	xmm0, xmm0, eax
+	mov	eax, dword ptr [rsp + 108]
+	lea	edx, [rax + rax]
+	cmp	edx, r14d
+	vmovss	dword ptr [r15], xmm0
+
+",Vec,3.0,291.0395812988281,0.023357109735476,5,2,1,1.25,0.5805369127516778,"[[281, 1, 38, 31, 3, 38, 5], [6, 1, 7, 11, 9, 10, 3, 31, 5], [33, 1, 7, 15, 15, 10, 3, 22, 5], [13, 1, 22, 40, 3, 5], [131, 1, 38, 3, 7, 30, 10, 5]]",2.0,['0_4_RAW'],"['openblas-csyrk.goto', 'openblas-cherk.goto']"
+498b4d084989c6488b11483b10,145.0,"	.text
+	mov	rcx, qword ptr [r13 + 8]
+	mov	r14, rax
+	mov	rdx, qword ptr [rcx]
+	cmp	rdx, qword ptr [rax]
+
+",Ld,1.5,164.90855407714844,0.1373003729458513,4,3,0,1.5,0.0344827586206896,"[[6, 1, 7, 19, 9, 10, 3, 20, 5], [0, 1, 15, 3, 17, 5], [6, 1, 7, 20, 10, 3, 4, 5], [13, 1, 4, 7, 15, 10, 3, 5]]",1.0,"['num_insts', '0_2_RAW', '2_3_RAW']",['clang']
+488b4424084883c4105b5d415c,202.0,"	.text
+	mov	rax, qword ptr [rsp + 8]
+	add	rsp, 16
+	pop	rbx
+	pop	rbp
+	pop	r12
+
+",Ld,2.0,213.2295379638672,0.0555917720983524,5,1,0,1.25,0.3811881188118812,"[[6, 1, 7, 11, 9, 10, 3, 15, 5], [16, 1, 9, 11, 3, 11, 5], [64, 1, 11, 7, 11, 10, 3, 41, 11, 5], [64, 1, 11, 7, 11, 10, 3, 23, 11, 5], [64, 1, 11, 7, 11, 10, 3, 45, 11, 5]]",1.25,['num_insts'],"['clang', 'tensorflow', 'ffmpeg']"
+488b442458488b8c2480000000488b5c2450480fafc1,148.0,"	.text
+	mov	rax, qword ptr [rsp + 88]
+	mov	rcx, qword ptr [rsp + 128]
+	mov	rbx, qword ptr [rsp + 80]
+	imul	rax, rcx
+
+",Ld,1.5,163.7294464111328,0.1062800433184649,4,3,0,1.5,0.0135135135135135,"[[6, 1, 7, 11, 9, 10, 3, 15, 5], [6, 1, 7, 11, 9, 10, 3, 20, 5], [6, 1, 7, 11, 9, 10, 3, 41, 5], [28, 1, 20, 15, 3, 15, 5]]",1.5,"['0_3_RAW', '1_3_RAW']",['openblas-sgeev.goto']
+4d89e84c8b6c24404c8b4c24284c89f94c89da4c89f64c89ef,187.0,"	.text
+	mov	r8, r13
+	mov	r13, qword ptr [rsp + 64]
+	mov	r9, qword ptr [rsp + 40]
+	mov	rcx, r15
+	mov	rdx, r11
+	mov	rsi, r14
+	mov	rdi, r13
+
+",Scalar,1.88,195.6173248291016,0.0460819509577625,7,2,0,1.75,0.0641711229946524,"[[0, 1, 19, 3, 53, 5], [6, 1, 7, 11, 9, 10, 3, 19, 5], [6, 1, 7, 11, 9, 10, 3, 47, 5], [0, 1, 30, 3, 20, 5], [0, 1, 65, 3, 4, 5], [0, 1, 17, 3, 2, 5], [0, 1, 19, 3, 8, 5]]",1.75,['num_insts'],['ffmpeg']
+0fb68c2450030000488b450048898424700100004c8b650883e101,168.0,"	.text
+	movzx	ecx, byte ptr [rsp + 848]
+	mov	rax, qword ptr [rbp]
+	mov	qword ptr [rsp + 368], rax
+	mov	r12, qword ptr [rbp + 8]
+	and	ecx, 1
+
+",Ld/St,1.69,150.6127166748047,0.1034957340785435,5,3,1,1.5,0.1071428571428571,"[[46, 1, 7, 11, 9, 10, 3, 12, 5], [6, 1, 7, 23, 10, 3, 15, 5], [0, 1, 15, 3, 7, 11, 9, 10, 5], [6, 1, 7, 23, 9, 10, 3, 45, 5], [32, 1, 9, 12, 3, 12, 5]]",1.5,['1_2_RAW'],['clang']
+4889c848bac3f5285c8fc2f52848c1e80248f7e248c1ea02488d0492488d048048c1e0024839c1,300.0,"	.text
+	mov	rax, rcx
+	movabs	rdx, 2951479051793528259
+	shr	rax, 2
+	mul	rdx
+	shr	rdx, 2
+	lea	rax, [rdx + 4*rdx]
+	lea	rax, [rax + 4*rax]
+	shl	rax, 2
+	cmp	rcx, rax
+
+",Scalar,3.01,315.6952819824219,0.0523176066080729,9,2,0,2.25,0.25,"[[0, 1, 20, 3, 15, 5], [14, 1, 9, 3, 4, 5], [50, 1, 9, 15, 3, 15, 5], [299, 1, 4, 15, 3, 4, 15, 5], [50, 1, 9, 4, 3, 4, 5], [33, 1, 7, 4, 4, 10, 3, 15, 5], [33, 1, 7, 15, 15, 10, 3, 15, 5], [34, 1, 9, 15, 3, 15, 5], [13, 1, 20, 15, 3, 5]]",2.25,['num_insts'],['ffmpeg']
+4154554889d5534883ec104889742408488d742408,407.0,"	.text
+	push	r12
+	push	rbp
+	mov	rbp, rdx
+	push	rbx
+	sub	rsp, 16
+	mov	qword ptr [rsp + 8], rsi
+	lea	rsi, [rsp + 8]
+
+",St,4.0,410.5737609863281,0.0087807395241477,7,1,1,1.75,0.5700245700245701,"[[36, 1, 45, 11, 3, 11, 7, 11, 9, 10, 5], [36, 1, 23, 11, 3, 11, 7, 11, 9, 10, 5], [0, 1, 4, 3, 23, 5], [36, 1, 41, 11, 3, 11, 7, 11, 9, 10, 5], [35, 1, 9, 11, 3, 11, 5], [0, 1, 2, 3, 7, 11, 9, 10, 5], [33, 1, 7, 11, 9, 10, 3, 2, 5]]",1.75,['num_insts'],['clang']
+c7030000803f4983c3014883c1204801ea4983c2014883c3244939fb,223.0,"	.text
+	mov	dword ptr [rbx], 1065353216
+	add	r11, 1
+	add	rcx, 32
+	add	rdx, rbp
+	add	r10, 1
+	add	rbx, 36
+	cmp	r11, rdi
+
+",Scalar,2.0,205.05763244628903,0.0804590473260581,7,0,1,1.75,0.2152466367713004,"[[0, 1, 9, 3, 7, 41, 10, 5], [16, 1, 9, 65, 3, 65, 5], [16, 1, 9, 20, 3, 20, 5], [16, 1, 23, 4, 3, 4, 5], [16, 1, 9, 66, 3, 66, 5], [16, 1, 9, 41, 3, 41, 5], [13, 1, 65, 8, 3, 5]]",1.75,['num_insts'],['openblas-strsm.goto']
+31d2b8ffffff7f48f7f14839f0,2098.0,"	.text
+	xor	edx, edx
+	mov	eax, 2147483647
+	div	rcx
+	cmp	rax, rsi
+
+",Scalar/Vec,21.0,2120.7119140625,0.0108255071794566,4,0,0,1.0,0.9523355576739752,"[[43, 1, 22, 22, 3, 22, 5], [14, 1, 9, 3, 31, 5], [181, 1, 20, 4, 15, 3, 4, 15, 5], [13, 1, 15, 2, 3, 5]]",21.0,['inst_2'],['ffmpeg']
+4889da4863f64863ffb848000000,97.0,"	.text
+	mov	rdx, rbx
+	movsxd	rsi, esi
+	movsxd	rdi, edi
+	mov	eax, 72
+
+",Scalar,1.12,102.9931869506836,0.0617854324812741,4,0,0,1.0,0.0309278350515464,"[[0, 1, 41, 3, 4, 5], [29, 1, 24, 3, 2, 5], [29, 1, 44, 3, 8, 5], [14, 1, 9, 3, 31, 5]]",1.0,['num_insts'],"['redis-server', 'tensorflow', 'ffmpeg']"
+4889f24889d14883e2f0660fefc0660f7402660fd7c083e10fd3e80fbcc0,398.0,"	.text
+	mov	rdx, rsi
+	mov	rcx, rdx
+	and	rdx, -16
+	pxor	xmm0, xmm0
+	pcmpeqb	xmm0, xmmword ptr [rdx]
+	pmovmskb	eax, xmm0
+	and	ecx, 15
+	shr	eax, cl
+	bsf	eax, eax
+
+",Scalar/Vec,4.0,453.5388793945313,0.1395449231018374,9,1,0,2.25,0.4346733668341708,"[[0, 1, 2, 3, 4, 5], [0, 1, 4, 3, 20, 5], [32, 1, 9, 4, 3, 4, 5], [137, 1, 38, 38, 3, 38, 5], [239, 1, 7, 4, 10, 38, 3, 38, 5], [242, 1, 38, 3, 31, 5], [32, 1, 9, 12, 3, 12, 5], [50, 1, 60, 31, 3, 31, 5], [382, 1, 31, 3, 31, 5]]",2.5,"['5_7_RAW', '7_8_RAW']",['embree']
+31c0488b742420488bbc24b0000000488b542448488b8c2498010000,199.0,"	.text
+	xor	eax, eax
+	mov	rsi, qword ptr [rsp + 32]
+	mov	rdi, qword ptr [rsp + 176]
+	mov	rdx, qword ptr [rsp + 72]
+	mov	rcx, qword ptr [rsp + 408]
+
+",Ld,2.0,197.52798461914065,0.0073970622153736,5,4,0,2.0,0.0050251256281407,"[[43, 1, 31, 31, 3, 31, 5], [6, 1, 7, 11, 9, 10, 3, 2, 5], [6, 1, 7, 11, 9, 10, 3, 8, 5], [6, 1, 7, 11, 9, 10, 3, 4, 5], [6, 1, 7, 11, 9, 10, 3, 20, 5]]",1.25,['num_insts'],"['openblas-ccholesky.goto', 'openblas-cpotrf.goto', 'openblas-cgeev.goto']"
+8b44244831c94889f2be70481501894708488b44245048894710,198.0,"	.text
+	mov	eax, dword ptr [rsp + 72]
+	xor	ecx, ecx
+	mov	rdx, rsi
+	mov	esi, 18172016
+	mov	dword ptr [rdi + 8], eax
+	mov	rax, qword ptr [rsp + 80]
+	mov	qword ptr [rdi + 16], rax
+
+",Ld/St,2.0,214.80116271972656,0.0848543571703361,7,2,2,2.0,0.0101010101010101,"[[6, 1, 7, 11, 9, 10, 3, 31, 5], [43, 1, 12, 12, 3, 12, 5], [0, 1, 2, 3, 4, 5], [14, 1, 9, 3, 24, 5], [0, 1, 31, 3, 7, 8, 9, 10, 5], [6, 1, 7, 11, 9, 10, 3, 15, 5], [0, 1, 15, 3, 7, 8, 9, 10, 5]]",1.75,['num_insts'],['ffmpeg']
+8b83ec1000004889c248c1e2054883bc139800000000,134.0,"	.text
+	mov	eax, dword ptr [rbx + 4332]
+	mov	rdx, rax
+	shl	rdx, 5
+	cmp	qword ptr [rbx + rdx + 152], 0
+
+",Ld,1.37,122.32379913330078,0.087135827363427,4,2,0,1.0,0.2537313432835821,"[[6, 1, 7, 41, 9, 10, 3, 31, 5], [0, 1, 15, 3, 4, 5], [34, 1, 9, 4, 3, 4, 5], [13, 1, 7, 41, 4, 9, 10, 9, 3, 5]]",1.0,"['num_insts', '2_3_RAW']",['ffmpeg']
+c4c17a100f448b5c2464c5fa2cc14439d8440f4dd88b84248401000044895c246401442464,1476.0,"	.text
+	vmovss	xmm1, dword ptr [r15]           # xmm1 = mem[0],zero,zero,zero
+	mov	r11d, dword ptr [rsp + 100]
+	vcvttss2si	eax, xmm1
+	cmp	eax, r11d
+	cmovge	r11d, eax
+	mov	eax, dword ptr [rsp + 388]
+	mov	dword ptr [rsp + 100], r11d
+	add	dword ptr [rsp + 100], eax
+
+",Ld/St,14.0,338.6837158203125,0.7705394879266175,1,1,0,0.5,0.9661246612466124,"[[131, 1, 7, 30, 10, 3, 62, 5], [6, 1, 7, 11, 9, 10, 3, 52, 5], [410, 1, 62, 3, 31, 5], [13, 1, 31, 52, 3, 5], [301, 1, 31, 3, 52, 5], [6, 1, 7, 11, 9, 10, 3, 31, 5], [0, 1, 52, 3, 7, 11, 9, 10, 5], [16, 1, 31, 7, 11, 9, 10, 3, 7, 11, 9, 10, 5]]",2.09,"['2_7_RAW', '6_7_RAW']",['openblas-cgeev.goto']
+4801d0488d0480488d048048c1e002489948f7f94883f809,4639.0,"	.text
+	add	rax, rdx
+	lea	rax, [rax + 4*rax]
+	lea	rax, [rax + 4*rax]
+	shl	rax, 2
+	cqo
+	idiv	rcx
+	cmp	rax, 9
+
+",Scalar/Vec,44.0,2142.616943359375,0.5381295659928056,7,2,0,1.75,0.9622763526622116,"[[16, 1, 4, 15, 3, 15, 5], [33, 1, 7, 15, 15, 10, 3, 15, 5], [33, 1, 7, 15, 15, 10, 3, 15, 5], [34, 1, 9, 15, 3, 15, 5], [223, 1, 15, 3, 4, 5], [224, 1, 20, 4, 15, 3, 4, 15, 5], [13, 1, 15, 9, 3, 5]]",24.25,['inst_5'],['redis-server']
+f30f6f57d1f30f6f4ed1b2d1660fefd1660f3817c2,200.0,"	.text
+	movdqu	xmm2, xmmword ptr [rdi - 47]
+	movdqu	xmm1, xmmword ptr [rsi - 47]
+	mov	dl, -47
+	pxor	xmm2, xmm1
+	ptest	xmm0, xmm2
+
+",Scalar/Vec,2.0,198.9422149658203,0.0052889251708984,5,2,0,1.25,0.375,"[[189, 1, 7, 8, 9, 10, 3, 69, 5], [189, 1, 7, 2, 9, 10, 3, 62, 5], [14, 1, 9, 3, 51, 5], [137, 1, 62, 69, 3, 69, 5], [405, 1, 38, 69, 3, 5]]",1.5,['0_4_RAW'],"['openssl', 'clang', 'tensorflow', 'sqlite']"
+498bb648040000498baea00400004c631c164d89d84d0386780400004885ed410fb630440fb6ee,283.0,"	.text
+	mov	rsi, qword ptr [r14 + 1096]
+	mov	rbp, qword ptr [r14 + 1184]
+	movsxd	r11, dword ptr [rsi + rdx]
+	mov	r8, r11
+	add	r8, qword ptr [r14 + 1144]
+	test	rbp, rbp
+	movzx	esi, byte ptr [r8]
+	movzx	r13d, sil
+
+",Ld,2.49,251.7870178222656,0.1102932232428777,8,5,0,2.5,0.1166077738515901,"[[6, 1, 7, 17, 9, 10, 3, 2, 5], [6, 1, 7, 17, 9, 10, 3, 23, 5], [29, 1, 7, 2, 4, 10, 3, 65, 5], [0, 1, 65, 3, 53, 5], [16, 1, 7, 17, 9, 10, 53, 3, 53, 5], [25, 1, 23, 23, 3, 5], [46, 1, 7, 53, 10, 3, 24, 5], [46, 1, 59, 3, 57, 5]]",2.0,['num_insts'],['ffmpeg']
+488b02488b7a084889bc24b800000048298424b8000000490fafc7488d04c148894424304885db,338.0,"	.text
+	mov	rax, qword ptr [rdx]
+	mov	rdi, qword ptr [rdx + 8]
+	mov	qword ptr [rsp + 184], rdi
+	sub	qword ptr [rsp + 184], rax
+	imul	rax, r15
+	lea	rax, [rcx + 8*rax]
+	mov	qword ptr [rsp + 48], rax
+	test	rbx, rbx
+
+",Ld/St,3.01,322.0177001953125,0.0472849106647559,8,4,3,3.0,0.1124260355029585,"[[6, 1, 7, 4, 10, 3, 15, 5], [6, 1, 7, 4, 9, 10, 3, 8, 5], [0, 1, 8, 3, 7, 11, 9, 10, 5], [35, 1, 15, 7, 11, 9, 10, 3, 7, 11, 9, 10, 5], [28, 1, 30, 15, 3, 15, 5], [33, 1, 7, 20, 15, 10, 3, 15, 5], [0, 1, 15, 3, 7, 11, 9, 10, 5], [25, 1, 41, 41, 3, 5]]",2.09,['2_3_RAW'],['openblas-dgeev.goto']
+410fb644241c83e07f8d50d083fa05,99.0,"	.text
+	movzx	eax, byte ptr [r12 + 28]
+	and	eax, 127
+	lea	edx, [rax - 48]
+	cmp	edx, 5
+
+",Ld,1.0,106.89694213867188,0.0797670923098169,4,2,0,1.0,0.0101010101010101,"[[46, 1, 7, 45, 9, 10, 3, 31, 5], [32, 1, 9, 31, 3, 31, 5], [33, 1, 7, 15, 9, 10, 3, 22, 5], [13, 1, 22, 9, 3, 5]]",1.0,"['num_insts', '0_2_RAW']",['clang']
+0fb64702c0e80283e01f83f801,128.0,"	.text
+	movzx	eax, byte ptr [rdi + 2]
+	shr	al, 2
+	and	eax, 31
+	cmp	eax, 1
+
+",Scalar,1.31,129.22637939453125,0.0095810890197753,4,1,0,1.0,0.21875,"[[46, 1, 7, 8, 9, 10, 3, 31, 5], [50, 1, 9, 58, 3, 58, 5], [32, 1, 9, 31, 3, 31, 5], [13, 1, 31, 9, 3, 5]]",1.0,"['num_insts', '0_1_RAW']",['clang']
+4c89fb4989df49d1ff4f8d247f49c1e4044c036424084d8b2c244d85ed,217.0,"	.text
+	mov	rbx, r15
+	mov	r15, rbx
+	sar	r15
+	lea	r12, [r15 + 2*r15]
+	shl	r12, 4
+	add	r12, qword ptr [rsp + 8]
+	mov	r13, qword ptr [r12]
+	test	r13, r13
+
+",Scalar,2.21,212.49913024902344,0.0207413352579565,8,3,0,2.0,0.0783410138248847,"[[0, 1, 30, 3, 41, 5], [0, 1, 41, 3, 30, 5], [56, 1, 9, 30, 3, 30, 5], [33, 1, 7, 30, 30, 10, 3, 45, 5], [34, 1, 9, 45, 3, 45, 5], [16, 1, 7, 11, 9, 10, 45, 3, 45, 5], [6, 1, 7, 45, 10, 3, 19, 5], [25, 1, 19, 19, 3, 5]]",2.0,['num_insts'],['clang']
+488b8424d00000004c89f7c5fb118424900100004c01f84889842480000000488b8424d8000000488d5c050031c04889de,306.0,"	.text
+	mov	rax, qword ptr [rsp + 208]
+	mov	rdi, r14
+	vmovsd	qword ptr [rsp + 400], xmm0
+	add	rax, r15
+	mov	qword ptr [rsp + 128], rax
+	mov	rax, qword ptr [rsp + 216]
+	lea	rbx, [rbp + rax]
+	xor	eax, eax
+	mov	rsi, rbx
+
+",Ld/St,3.05,267.28875732421875,0.126507329005821,9,3,2,2.25,0.2647058823529412,"[[6, 1, 7, 11, 9, 10, 3, 15, 5], [0, 1, 17, 3, 8, 5], [99, 1, 38, 3, 7, 11, 9, 10, 5], [16, 1, 30, 15, 3, 15, 5], [0, 1, 15, 3, 7, 11, 9, 10, 5], [6, 1, 7, 11, 9, 10, 3, 15, 5], [33, 1, 7, 23, 15, 10, 3, 41, 5], [43, 1, 31, 31, 3, 31, 5], [0, 1, 41, 3, 2, 5]]",2.25,['num_insts'],['openblas-dgeev.goto']
+8d4e0139c10f43c131d229f0f7f789c14189442414418b7c242039cf,2598.0,"	.text
+	lea	ecx, [rsi + 1]
+	cmp	ecx, eax
+	cmovae	eax, ecx
+	xor	edx, edx
+	sub	eax, esi
+	div	edi
+	mov	ecx, eax
+	mov	dword ptr [r12 + 20], eax
+	mov	edi, dword ptr [r12 + 32]
+	cmp	edi, ecx
+
+",Scalar/Vec,26.5,1227.9862060546875,0.5273340238434613,10,2,1,2.5,0.9037721324095458,"[[33, 1, 7, 2, 9, 10, 3, 12, 5], [13, 1, 12, 31, 3, 5], [75, 1, 12, 3, 31, 5], [43, 1, 22, 22, 3, 22, 5], [35, 1, 24, 31, 3, 31, 5], [181, 1, 44, 22, 31, 3, 22, 31, 5], [0, 1, 31, 3, 12, 5], [0, 1, 31, 3, 7, 45, 9, 10, 5], [6, 1, 7, 45, 9, 10, 3, 44, 5], [13, 1, 44, 12, 3, 5]]",9.0,['inst_5'],['clang']
+488d4c24204c8d4424104d89e1be060000004889ef,131.0,"	.text
+	lea	rcx, [rsp + 32]
+	lea	r8, [rsp + 16]
+	mov	r9, r12
+	mov	esi, 6
+	mov	rdi, rbp
+
+",Scalar,1.31,130.67544555664062,0.0024775148348043,5,2,0,1.25,0.0458015267175572,"[[33, 1, 7, 11, 9, 10, 3, 20, 5], [33, 1, 7, 11, 9, 10, 3, 53, 5], [0, 1, 45, 3, 47, 5], [14, 1, 9, 3, 24, 5], [0, 1, 23, 3, 8, 5]]",1.25,['num_insts'],['clang']
+8b9424280100008b84242c0100004c8b13448b4b084c8bb5980000004c8b859000000039c2,299.0,"	.text
+	mov	edx, dword ptr [rsp + 296]
+	mov	eax, dword ptr [rsp + 300]
+	mov	r10, qword ptr [rbx]
+	mov	r9d, dword ptr [rbx + 8]
+	mov	r14, qword ptr [rbp + 152]
+	mov	r8, qword ptr [rbp + 144]
+	cmp	edx, eax
+
+",Ld,3.0,304.0961303710937,0.0170439142845942,7,6,0,3.0,0.003344481605351,"[[6, 1, 7, 11, 9, 10, 3, 22, 5], [6, 1, 7, 11, 9, 10, 3, 31, 5], [6, 1, 7, 41, 10, 3, 66, 5], [6, 1, 7, 41, 9, 10, 3, 95, 5], [6, 1, 7, 23, 9, 10, 3, 17, 5], [6, 1, 7, 23, 9, 10, 3, 53, 5], [13, 1, 22, 31, 3, 5]]",1.75,['num_insts'],['clang']
+488d04404d89ca4c895c24284c894424204c894c2408488d3cc64889742410,399.0,"	.text
+	lea	rax, [rax + 2*rax]
+	mov	r10, r9
+	mov	qword ptr [rsp + 40], r11
+	mov	qword ptr [rsp + 32], r8
+	mov	qword ptr [rsp + 8], r9
+	lea	rdi, [rsi + 8*rax]
+	mov	qword ptr [rsp + 16], rsi
+
+",St,4.0,393.927490234375,0.0127130570567042,7,2,4,4.0,0.0025062656641603,"[[33, 1, 7, 15, 15, 10, 3, 15, 5], [0, 1, 47, 3, 66, 5], [0, 1, 65, 3, 7, 11, 9, 10, 5], [0, 1, 53, 3, 7, 11, 9, 10, 5], [0, 1, 47, 3, 7, 11, 9, 10, 5], [33, 1, 7, 2, 15, 10, 3, 8, 5], [0, 1, 2, 3, 7, 11, 9, 10, 5]]",1.75,['num_insts'],"['embree', 'tensorflow']"
+41bc100000005b5d4489e0415c415d415e,300.0,"	.text
+	mov	r12d, 16
+	pop	rbx
+	pop	rbp
+	mov	eax, r12d
+	pop	r12
+	pop	r13
+	pop	r14
+
+",Ld,3.0,296.063232421875,0.01312255859375,7,0,0,1.75,0.4166666666666667,"[[14, 1, 9, 3, 21, 5], [64, 1, 11, 7, 11, 10, 3, 41, 11, 5], [64, 1, 11, 7, 11, 10, 3, 23, 11, 5], [0, 1, 21, 3, 31, 5], [64, 1, 11, 7, 11, 10, 3, 45, 11, 5], [64, 1, 11, 7, 11, 10, 3, 19, 11, 5], [64, 1, 11, 7, 11, 10, 3, 17, 11, 5]]",1.75,['num_insts'],['tensorflow']
+488dbb700100004889832001000048c783580100000000000048c783600100000000000048c7836801000000000000be03000000c783700100000000803f48c7837801000000000000,601.0,"	.text
+	lea	rdi, [rbx + 368]
+	mov	qword ptr [rbx + 288], rax
+	mov	qword ptr [rbx + 344], 0
+	mov	qword ptr [rbx + 352], 0
+	mov	qword ptr [rbx + 360], 0
+	mov	esi, 3
+	mov	dword ptr [rbx + 368], 1065353216
+	mov	qword ptr [rbx + 376], 0
+
+",St,6.0,601.3348388671875,0.000557136218282,8,1,6,6.0,0.0016638935108152,"[[33, 1, 7, 41, 9, 10, 3, 8, 5], [0, 1, 15, 3, 7, 41, 9, 10, 5], [0, 1, 9, 3, 7, 41, 9, 10, 5], [0, 1, 9, 3, 7, 41, 9, 10, 5], [0, 1, 9, 3, 7, 41, 9, 10, 5], [14, 1, 9, 3, 24, 5], [0, 1, 9, 3, 7, 41, 9, 10, 5], [0, 1, 9, 3, 7, 41, 9, 10, 5]]",2.0,['num_insts'],['tensorflow']
+4c89d14c89f84829f14c29e04883f901,148.0,"	.text
+	mov	rcx, r10
+	mov	rax, r15
+	sub	rcx, rsi
+	sub	rax, r12
+	cmp	rcx, 1
+
+",Scalar,1.5,150.46336364746094,0.0166443489693306,5,0,0,1.25,0.1554054054054054,"[[0, 1, 66, 3, 20, 5], [0, 1, 30, 3, 15, 5], [35, 1, 2, 20, 3, 20, 5], [35, 1, 45, 15, 3, 15, 5], [13, 1, 20, 9, 3, 5]]",1.25,['num_insts'],"['openblas-sgeev.goto', 'openblas-dgeev.goto']"
+4883c7104883c6104883c1024883c0204c39c1,168.0,"	.text
+	add	rdi, 16
+	add	rsi, 16
+	add	rcx, 2
+	add	rax, 32
+	cmp	rcx, r8
+
+",Scalar,1.67,167.3411407470703,0.0039217812674386,5,0,0,1.25,0.2559523809523809,"[[16, 1, 9, 8, 3, 8, 5], [16, 1, 9, 2, 3, 2, 5], [16, 1, 9, 20, 3, 20, 5], [16, 1, 9, 15, 3, 15, 5], [13, 1, 20, 53, 3, 5]]",1.25,['num_insts'],['openblas-ctrmm.goto']
+4157415641554154554889fd534883ec284839fe4889742408,715.0,"	.text
+	push	r15
+	push	r14
+	push	r13
+	push	r12
+	push	rbp
+	mov	rbp, rdi
+	push	rbx
+	sub	rsp, 40
+	cmp	rsi, rdi
+	mov	qword ptr [rsp + 8], rsi
+
+",St,7.0,718.3348388671875,0.0046641103037587,10,0,1,2.5,0.6503496503496504,"[[36, 1, 30, 11, 3, 11, 7, 11, 9, 10, 5], [36, 1, 17, 11, 3, 11, 7, 11, 9, 10, 5], [36, 1, 19, 11, 3, 11, 7, 11, 9, 10, 5], [36, 1, 45, 11, 3, 11, 7, 11, 9, 10, 5], [36, 1, 23, 11, 3, 11, 7, 11, 9, 10, 5], [0, 1, 8, 3, 23, 5], [36, 1, 41, 11, 3, 11, 7, 11, 9, 10, 5], [35, 1, 9, 11, 3, 11, 5], [13, 1, 2, 8, 3, 5], [0, 1, 2, 3, 7, 11, 9, 10, 5]]",2.5,['num_insts'],['clang']
+85c04c8b9d40f9ffff4c8b9538f9ffff4c8b8558f9ffff48638d48f9ffff,197.0,"	.text
+	test	eax, eax
+	mov	r11, qword ptr [rbp - 1728]
+	mov	r10, qword ptr [rbp - 1736]
+	mov	r8, qword ptr [rbp - 1704]
+	movsxd	rcx, dword ptr [rbp - 1720]
+
+",Ld,2.0,195.4823303222656,0.0077039069935756,5,4,0,2.0,0.0152284263959391,"[[25, 1, 31, 31, 3, 5], [6, 1, 7, 23, 9, 10, 3, 65, 5], [6, 1, 7, 23, 9, 10, 3, 66, 5], [6, 1, 7, 23, 9, 10, 3, 53, 5], [29, 1, 7, 23, 9, 10, 3, 20, 5]]",1.25,['num_insts'],['tensorflow']
+b9ffffffff4c89ea4889de4c89e74c89b424c0000000c78424c800000000000000c78424cc00000005000000,298.0,"	.text
+	mov	ecx, 4294967295
+	mov	rdx, r13
+	mov	rsi, rbx
+	mov	rdi, r12
+	mov	qword ptr [rsp + 192], r14
+	mov	dword ptr [rsp + 200], 0
+	mov	dword ptr [rsp + 204], 5
+
+",St,3.0,300.6248779296875,0.0088083152002936,7,0,3,3.0,0.0067114093959731,"[[14, 1, 9, 3, 12, 5], [0, 1, 19, 3, 4, 5], [0, 1, 41, 3, 2, 5], [0, 1, 45, 3, 8, 5], [0, 1, 17, 3, 7, 11, 9, 10, 5], [0, 1, 9, 3, 7, 11, 9, 10, 5], [0, 1, 9, 3, 7, 11, 9, 10, 5]]",1.75,['num_insts'],['clang']
+4889fd4c89eb660f1f4400004885db,98.0,"	.text
+	mov	rbp, rdi
+	mov	rbx, r13
+	nop	word ptr [rax + rax]
+	test	rbx, rbx
+
+",Scalar,1.0,99.69606018066406,0.0173067365373883,4,1,0,1.0,0.0204081632653061,"[[0, 1, 8, 3, 23, 5], [0, 1, 19, 3, 41, 5], [42, 1, 7, 15, 15, 10, 3, 5], [25, 1, 41, 41, 3, 5]]",1.0,['num_insts'],['clang']
+48830001488bb42490000000488bbc24800000004531c931c931d2,600.0,"	.text
+	add	qword ptr [rax], 1
+	mov	rsi, qword ptr [rsp + 144]
+	mov	rdi, qword ptr [rsp + 128]
+	xor	r9d, r9d
+	xor	ecx, ecx
+	xor	edx, edx
+
+",Ld/St,6.0,592.724853515625,0.012125244140625,6,3,1,1.5,0.75,"[[16, 1, 9, 7, 15, 10, 3, 7, 15, 10, 5], [6, 1, 7, 11, 9, 10, 3, 2, 5], [6, 1, 7, 11, 9, 10, 3, 8, 5], [43, 1, 95, 95, 3, 95, 5], [43, 1, 12, 12, 3, 12, 5], [43, 1, 22, 22, 3, 22, 5]]",1.5,['num_insts'],['tensorflow']
+31d289c14489e8f7f1488b7c24404189c4,2188.0,"	.text
+	xor	edx, edx
+	mov	ecx, eax
+	mov	eax, r13d
+	div	ecx
+	mov	rdi, qword ptr [rsp + 64]
+	mov	r12d, eax
+
+",Scalar/Vec,20.0,1172.834228515625,0.4639697310257655,6,1,0,1.5,0.9314442413162706,"[[43, 1, 22, 22, 3, 22, 5], [0, 1, 31, 3, 12, 5], [0, 1, 57, 3, 31, 5], [181, 1, 12, 22, 31, 3, 22, 31, 5], [6, 1, 7, 11, 9, 10, 3, 8, 5], [0, 1, 31, 3, 21, 5]]",9.25,['1_3_RAW'],['clang']
+41c7461c060000008b459c41894610488b7da0498d45104839c7,198.0,"	.text
+	mov	dword ptr [r14 + 28], 6
+	mov	eax, dword ptr [rbp - 100]
+	mov	dword ptr [r14 + 16], eax
+	mov	rdi, qword ptr [rbp - 96]
+	lea	rax, [r13 + 16]
+	cmp	rdi, rax
+
+",Ld/St,2.0,205.6752014160156,0.0387636435152302,6,3,2,2.0,0.0101010101010101,"[[0, 1, 9, 3, 7, 17, 9, 10, 5], [6, 1, 7, 23, 9, 10, 3, 31, 5], [0, 1, 31, 3, 7, 17, 9, 10, 5], [6, 1, 7, 23, 9, 10, 3, 8, 5], [33, 1, 7, 19, 9, 10, 3, 15, 5], [13, 1, 8, 15, 3, 5]]",1.5,"['num_insts', '1_2_RAW']",['tensorflow']
+4181e6ff7fffff4889c231c0483b53e8,99.0,"	.text
+	and	r14d, 4294934527
+	mov	rdx, rax
+	xor	eax, eax
+	cmp	rdx, qword ptr [rbx - 24]
+
+",Scalar,1.0,115.13231658935548,0.1629526928217725,4,1,0,1.0,0.0101010101010101,"[[32, 1, 9, 40, 3, 40, 5], [0, 1, 15, 3, 4, 5], [43, 1, 31, 31, 3, 31, 5], [13, 1, 4, 7, 41, 9, 10, 3, 5]]",1.0,['num_insts'],['clang']
+8b8424e0000000c684243801000001898424300100008b8424a800000089842434010000,300.0,"	.text
+	mov	eax, dword ptr [rsp + 224]
+	mov	byte ptr [rsp + 312], 1
+	mov	dword ptr [rsp + 304], eax
+	mov	eax, dword ptr [rsp + 168]
+	mov	dword ptr [rsp + 308], eax
+
+",St,3.0,303.332763671875,0.0111092122395833,5,2,3,3.0,0.0,"[[6, 1, 7, 11, 9, 10, 3, 31, 5], [0, 1, 9, 3, 7, 11, 9, 10, 5], [0, 1, 31, 3, 7, 11, 9, 10, 5], [6, 1, 7, 11, 9, 10, 3, 31, 5], [0, 1, 31, 3, 7, 11, 9, 10, 5]]",1.5,"['0_2_RAW', '0_4_RAW', '3_4_RAW']",['clang']
+4c8b442408488b542410b90100000049894424404c89fe4c89e7,161.0,"	.text
+	mov	r8, qword ptr [rsp + 8]
+	mov	rdx, qword ptr [rsp + 16]
+	mov	ecx, 1
+	mov	qword ptr [r12 + 64], rax
+	mov	rsi, r15
+	mov	rdi, r12
+
+",Ld/St,1.62,162.07872009277344,0.006700124799835,6,2,1,1.5,0.0683229813664596,"[[6, 1, 7, 11, 9, 10, 3, 53, 5], [6, 1, 7, 11, 9, 10, 3, 4, 5], [14, 1, 9, 3, 12, 5], [0, 1, 15, 3, 7, 45, 9, 10, 5], [0, 1, 30, 3, 2, 5], [0, 1, 45, 3, 8, 5]]",1.5,['num_insts'],['clang']
+4881c4f80300005b5d415c415d415e415f,525.0,"	.text
+	add	rsp, 1016
+	pop	rbx
+	pop	rbp
+	pop	r12
+	pop	r13
+	pop	r14
+	pop	r15
+
+",Ld,3.0,577.257080078125,0.0995372953869047,7,0,0,1.75,0.6666666666666666,"[[16, 1, 9, 11, 3, 11, 5], [64, 1, 11, 7, 11, 10, 3, 41, 11, 5], [64, 1, 11, 7, 11, 10, 3, 23, 11, 5], [64, 1, 11, 7, 11, 10, 3, 45, 11, 5], [64, 1, 11, 7, 11, 10, 3, 19, 11, 5], [64, 1, 11, 7, 11, 10, 3, 17, 11, 5], [64, 1, 11, 7, 11, 10, 3, 30, 11, 5]]",1.75,['num_insts'],"['openblas-sgeev.goto', 'clang']"
+b904000000ba0c0000004889de4c89f7,97.0,"	.text
+	mov	ecx, 4
+	mov	edx, 12
+	mov	rsi, rbx
+	mov	rdi, r14
+
+",Scalar,1.0,98.9647445678711,0.0202550986378463,4,0,0,1.0,0.0309278350515464,"[[14, 1, 9, 3, 12, 5], [14, 1, 9, 3, 22, 5], [0, 1, 41, 3, 2, 5], [0, 1, 17, 3, 8, 5]]",1.0,['num_insts'],['clang']
+8b44241445893c24418b56300fafd085c0,142.0,"	.text
+	mov	eax, dword ptr [rsp + 20]
+	mov	dword ptr [r12], r15d
+	mov	edx, dword ptr [r14 + 48]
+	imul	edx, eax
+	test	eax, eax
+
+",Ld,1.44,138.72305297851562,0.0230770917005941,5,2,1,1.25,0.1197183098591548,"[[6, 1, 7, 11, 9, 10, 3, 31, 5], [0, 1, 39, 3, 7, 45, 10, 5], [6, 1, 7, 17, 9, 10, 3, 22, 5], [28, 1, 31, 22, 3, 22, 5], [25, 1, 31, 31, 3, 5]]",1.5,"['0_3_RAW', '2_3_RAW']",['clang']
+488b0b8b01c1e80c83e03f83f82f,173.0,"	.text
+	mov	rcx, qword ptr [rbx]
+	mov	eax, dword ptr [rcx]
+	shr	eax, 12
+	and	eax, 63
+	cmp	eax, 47
+
+",Ld,1.74,166.40415954589844,0.038126245399431,5,2,0,1.25,0.2774566473988439,"[[6, 1, 7, 41, 10, 3, 20, 5], [6, 1, 7, 20, 10, 3, 31, 5], [50, 1, 9, 31, 3, 31, 5], [32, 1, 9, 31, 3, 31, 5], [13, 1, 31, 9, 3, 5]]",1.25,['num_insts'],['clang']
+488b442458488b4c24284839c84989c6,98.0,"	.text
+	mov	rax, qword ptr [rsp + 88]
+	mov	rcx, qword ptr [rsp + 40]
+	cmp	rax, rcx
+	mov	r14, rax
+
+",Ld,1.0,125.16852569580078,0.2772298540387835,4,2,0,1.0,0.0204081632653061,"[[6, 1, 7, 11, 9, 10, 3, 15, 5], [6, 1, 7, 11, 9, 10, 3, 20, 5], [13, 1, 15, 20, 3, 5], [0, 1, 15, 3, 17, 5]]",1.0,['num_insts'],"['openblas-zhemm.goto', 'openblas-csymm.goto', 'openblas-chemm.goto', 'openblas-zsymm.goto']"
+c5fa117804c5fa1119c5fa1106c5fa117604c4c17a1112,501.0,"	.text
+	vmovss	dword ptr [rax + 4], xmm7
+	vmovss	dword ptr [rcx], xmm3
+	vmovss	dword ptr [rsi], xmm0
+	vmovss	dword ptr [rsi + 4], xmm6
+	vmovss	dword ptr [r10], xmm2
+
+",Scalar/Vec,5.0,539.9114990234375,0.0776676627214321,5,0,5,5.0,0.0019960079840318,"[[131, 1, 101, 3, 7, 15, 9, 10, 5], [131, 1, 102, 3, 7, 20, 10, 5], [131, 1, 38, 3, 7, 2, 10, 5], [131, 1, 81, 3, 7, 2, 9, 10, 5], [131, 1, 69, 3, 7, 66, 10, 5]]",1.25,['num_insts'],"['openblas-slinpack.goto', 'openblas-sgetri.goto', 'openblas-sgesv.goto']"
+4c8b4c2408488b4c242031d24c8b4424284c89e7498b7110,198.0,"	.text
+	mov	r9, qword ptr [rsp + 8]
+	mov	rcx, qword ptr [rsp + 32]
+	xor	edx, edx
+	mov	r8, qword ptr [rsp + 40]
+	mov	rdi, r12
+	mov	rsi, qword ptr [r9 + 16]
+
+",Ld,2.0,195.1961669921875,0.0141607727667297,6,4,0,2.0,0.0101010101010101,"[[6, 1, 7, 11, 9, 10, 3, 47, 5], [6, 1, 7, 11, 9, 10, 3, 20, 5], [43, 1, 22, 22, 3, 22, 5], [6, 1, 7, 11, 9, 10, 3, 53, 5], [0, 1, 45, 3, 8, 5], [6, 1, 7, 47, 9, 10, 3, 2, 5]]",1.5,['num_insts'],['clang']
+4d8b6500488b5c24184c29e3488b4424304c8b742410488b68384d85e44889ee4c89f7,250.0,"	.text
+	mov	r12, qword ptr [r13]
+	mov	rbx, qword ptr [rsp + 24]
+	sub	rbx, r12
+	mov	rax, qword ptr [rsp + 48]
+	mov	r14, qword ptr [rsp + 16]
+	mov	rbp, qword ptr [rax + 56]
+	test	r12, r12
+	mov	rsi, rbp
+	mov	rdi, r14
+
+",Ld,2.5,259.7673034667969,0.0390692138671875,9,5,0,2.5,0.0,"[[6, 1, 7, 19, 10, 3, 45, 5], [6, 1, 7, 11, 9, 10, 3, 41, 5], [35, 1, 45, 41, 3, 41, 5], [6, 1, 7, 11, 9, 10, 3, 15, 5], [6, 1, 7, 11, 9, 10, 3, 17, 5], [6, 1, 7, 15, 9, 10, 3, 23, 5], [25, 1, 45, 45, 3, 5], [0, 1, 23, 3, 2, 5], [0, 1, 17, 3, 8, 5]]",2.25,['num_insts'],['clang']
+488b7320488b53284889df4829f2,97.0,"	.text
+	mov	rsi, qword ptr [rbx + 32]
+	mov	rdx, qword ptr [rbx + 40]
+	mov	rdi, rbx
+	sub	rdx, rsi
+
+",Ld,1.0,103.9915771484375,0.0720781149323453,4,2,0,1.0,0.0309278350515464,"[[6, 1, 7, 41, 9, 10, 3, 2, 5], [6, 1, 7, 41, 9, 10, 3, 4, 5], [0, 1, 41, 3, 8, 5], [35, 1, 2, 4, 3, 4, 5]]",1.0,['num_insts'],"['openssl', 'eigen-matmat', 'openblas-scholesky.goto', 'redis-server', 'eigen-vecmat', 'openblas-dcholesky.goto', 'openblas-ccholesky.goto', 'openblas-zcholesky.goto', 'embree']"
+83addcfeffff014c89fe8bbddcfeffff4c29ee4889b550ffffff48c1fe0229f783e22089bd40ffffff,687.0,"	.text
+	sub	dword ptr [rbp - 292], 1
+	mov	rsi, r15
+	mov	edi, dword ptr [rbp - 292]
+	sub	rsi, r13
+	mov	qword ptr [rbp - 176], rsi
+	sar	rsi, 2
+	sub	edi, esi
+	and	edx, 32
+	mov	dword ptr [rbp - 192], edi
+
+",Ld/St,7.0,647.6995849609375,0.0572058443072234,9,2,3,3.0,0.5633187772925764,"[[35, 1, 9, 7, 23, 9, 10, 3, 7, 23, 9, 10, 5], [0, 1, 30, 3, 2, 5], [6, 1, 7, 23, 9, 10, 3, 44, 5], [35, 1, 19, 2, 3, 2, 5], [0, 1, 2, 3, 7, 23, 9, 10, 5], [56, 1, 9, 2, 3, 2, 5], [35, 1, 24, 44, 3, 44, 5], [32, 1, 9, 22, 3, 22, 5], [0, 1, 44, 3, 7, 23, 9, 10, 5]]",2.25,['num_insts'],"['tensorflow', 'ffmpeg']"
+4983ec0148035c24284883c5014983fcff,130.0,"	.text
+	sub	r12, 1
+	add	rbx, qword ptr [rsp + 40]
+	add	rbp, 1
+	cmp	r12, -1
+
+",Scalar,1.35,130.1939697265625,0.0014920748197115,4,1,0,1.0,0.2307692307692307,"[[35, 1, 9, 45, 3, 45, 5], [16, 1, 7, 11, 9, 10, 41, 3, 41, 5], [16, 1, 9, 23, 3, 23, 5], [13, 1, 45, 9, 3, 5]]",1.0,['num_insts'],"['openblas-ccholesky.goto', 'openblas-cpotrf.goto']"
+8b54240c89d130c981f900010000,133.0,"	.text
+	mov	edx, dword ptr [rsp + 12]
+	mov	ecx, edx
+	xor	cl, cl
+	cmp	ecx, 256
+
+",Scalar,1.0,133.23446655273438,0.0017629064115366,4,1,0,1.0,0.2481203007518797,"[[6, 1, 7, 11, 9, 10, 3, 22, 5], [0, 1, 22, 3, 12, 5], [43, 1, 60, 60, 3, 60, 5], [13, 1, 12, 9, 3, 5]]",1.0,['num_insts'],['ffmpeg']
+488b842418010000488bbc24d8000000480faf842468010000488d0478488bbc2478010000488d14c7,250.0,"	.text
+	mov	rax, qword ptr [rsp + 280]
+	mov	rdi, qword ptr [rsp + 216]
+	imul	rax, qword ptr [rsp + 360]
+	lea	rax, [rax + 2*rdi]
+	mov	rdi, qword ptr [rsp + 376]
+	lea	rdx, [rdi + 8*rax]
+
+",Ld,2.59,218.1874237060547,0.1272503051757812,6,6,0,3.0,0.2,"[[6, 1, 7, 11, 9, 10, 3, 15, 5], [6, 1, 7, 11, 9, 10, 3, 8, 5], [28, 1, 7, 11, 9, 10, 15, 3, 15, 5], [33, 1, 7, 15, 8, 10, 3, 15, 5], [6, 1, 7, 11, 9, 10, 3, 8, 5], [33, 1, 7, 8, 15, 10, 3, 4, 5]]",1.5,"['num_insts', '0_2_RAW', '2_3_RAW', '2_5_RAW']",['openblas-zgeev.goto']
+4889184c8960084883c201895508488b7c2418,299.0,"	.text
+	mov	qword ptr [rax], rbx
+	mov	qword ptr [rax + 8], r12
+	add	rdx, 1
+	mov	dword ptr [rbp + 8], edx
+	mov	rdi, qword ptr [rsp + 24]
+
+",St,3.0,290.01141357421875,0.0300621619591346,5,1,3,3.0,0.003344481605351,"[[0, 1, 41, 3, 7, 15, 10, 5], [0, 1, 45, 3, 7, 15, 9, 10, 5], [16, 1, 9, 4, 3, 4, 5], [0, 1, 22, 3, 7, 23, 9, 10, 5], [6, 1, 7, 11, 9, 10, 3, 8, 5]]",1.25,"['num_insts', '2_3_RAW']",['clang']
+8b9c24f8030000488bac24f003000048c1e3054801eb4839dd,155.0,"	.text
+	mov	ebx, dword ptr [rsp + 1016]
+	mov	rbp, qword ptr [rsp + 1008]
+	shl	rbx, 5
+	add	rbx, rbp
+	cmp	rbp, rbx
+
+",Ld,1.56,152.28138732910156,0.0175394365864415,5,2,0,1.25,0.1935483870967742,"[[6, 1, 7, 11, 9, 10, 3, 27, 5], [6, 1, 7, 11, 9, 10, 3, 23, 5], [34, 1, 9, 41, 3, 41, 5], [16, 1, 23, 41, 3, 41, 5], [13, 1, 23, 41, 3, 5]]",1.25,['num_insts'],['clang']
+660f282666410f54e7660f5fc4660f286e1066410f54ef660f5fcd4883c62048f7c702000000,296.0,"	.text
+	movapd	xmm4, xmmword ptr [rsi]
+	andpd	xmm4, xmm15
+	maxpd	xmm0, xmm4
+	movapd	xmm5, xmmword ptr [rsi + 16]
+	andpd	xmm5, xmm15
+	maxpd	xmm1, xmm5
+	add	rsi, 32
+	test	rdi, 2
+
+",Vec,3.0,294.81036376953125,0.0040190413191511,8,2,0,2.0,0.3243243243243243,"[[205, 1, 7, 2, 10, 3, 80, 5], [314, 1, 160, 80, 3, 80, 5], [323, 1, 80, 38, 3, 38, 5], [205, 1, 7, 2, 9, 10, 3, 83, 5], [314, 1, 160, 83, 3, 83, 5], [323, 1, 83, 62, 3, 62, 5], [16, 1, 9, 2, 3, 2, 5], [25, 1, 8, 9, 3, 5]]",2.0,"['num_insts', '1_2_RAW', '4_5_RAW']","['openblas-idamax.goto', 'openblas-dgeev.goto', 'openblas-zgeev.goto', 'openblas-dgetri.goto', 'openblas-dlinpack.goto', 'openblas-dgesv.goto']"
+8b8bf0000000488b542408488b042483c10190898bf000000048833aff,600.0,"	.text
+	mov	ecx, dword ptr [rbx + 240]
+	mov	rdx, qword ptr [rsp + 8]
+	mov	rax, qword ptr [rsp]
+	add	ecx, 1
+	nop
+	mov	dword ptr [rbx + 240], ecx
+	cmp	qword ptr [rdx], -1
+
+",Ld/St,6.0,615.8323974609375,0.0263873291015625,7,4,1,2.0,0.6666666666666666,"[[6, 1, 7, 41, 9, 10, 3, 12, 5], [6, 1, 7, 11, 9, 10, 3, 4, 5], [6, 1, 7, 11, 10, 3, 15, 5], [16, 1, 9, 12, 3, 12, 5], [114, 1, 3, 5], [0, 1, 12, 3, 7, 41, 9, 10, 5], [13, 1, 7, 4, 10, 9, 3, 5]]",1.75,['num_insts'],['clang']
+488d0c764d8d64cd10458b442404453b0491,137.0,"	.text
+	lea	rcx, [rsi + 2*rsi]
+	lea	r12, [r13 + 8*rcx + 16]
+	mov	r8d, dword ptr [r12 + 4]
+	cmp	r8d, dword ptr [r9 + 4*rdx]
+
+",Scalar/Vec,1.33,137.306884765625,0.0022400347855839,4,4,0,2.0,0.45985401459854,"[[33, 1, 7, 2, 2, 10, 3, 20, 5], [33, 1, 7, 19, 20, 9, 10, 3, 45, 5], [6, 1, 7, 45, 9, 10, 3, 18, 5], [13, 1, 18, 7, 47, 4, 10, 3, 5]]",1.5,"['0_1_RAW', '1_2_RAW']",['redis-server']
+488d7720c5f928c14883c70bc5fb114c2408,110.0,"	.text
+	lea	rsi, [rdi + 32]
+	vmovapd	xmm0, xmm1
+	add	rdi, 11
+	vmovsd	qword ptr [rsp + 8], xmm1
+
+",Vec,1.12,113.14840698242188,0.0286218816583806,4,1,1,1.0,0.0909090909090909,"[[33, 1, 7, 8, 9, 10, 3, 2, 5], [156, 1, 62, 3, 38, 5], [16, 1, 9, 8, 3, 8, 5], [99, 1, 62, 3, 7, 11, 9, 10, 5]]",1.0,"['num_insts', 'inst_3']",['redis-server']
+89c18b44245031d2f7f185d2,2187.0,"	.text
+	mov	ecx, eax
+	mov	eax, dword ptr [rsp + 80]
+	xor	edx, edx
+	div	ecx
+	test	edx, edx
+
+",Scalar/Vec,20.0,1003.5376586914062,0.5411350440368513,5,1,0,1.25,0.9428440786465476,"[[0, 1, 31, 3, 12, 5], [6, 1, 7, 11, 9, 10, 3, 31, 5], [43, 1, 22, 22, 3, 22, 5], [181, 1, 12, 22, 31, 3, 22, 31, 5], [25, 1, 22, 22, 3, 5]]",9.25,['0_3_RAW'],['clang']
+488b4c24084989c74c8d706085c989cb,131.0,"	.text
+	mov	rcx, qword ptr [rsp + 8]
+	mov	r15, rax
+	lea	r14, [rax + 96]
+	test	ecx, ecx
+	mov	ebx, ecx
+
+",Scalar,1.33,149.61952209472656,0.1421337564482943,5,2,0,1.25,0.0458015267175572,"[[6, 1, 7, 11, 9, 10, 3, 20, 5], [0, 1, 15, 3, 30, 5], [33, 1, 7, 15, 9, 10, 3, 17, 5], [25, 1, 12, 12, 3, 5], [0, 1, 12, 3, 27, 5]]",1.25,['num_insts'],['clang']
+89c28b442454488b7c2458488b4c24704c8b5424784c8d040789d04939c0,235.0,"	.text
+	mov	edx, eax
+	mov	eax, dword ptr [rsp + 84]
+	mov	rdi, qword ptr [rsp + 88]
+	mov	rcx, qword ptr [rsp + 112]
+	mov	r10, qword ptr [rsp + 120]
+	lea	r8, [rdi + rax]
+	mov	eax, edx
+	cmp	r8, rax
+
+",Ld,2.37,259.8623046875,0.1057970412234042,8,5,0,2.5,0.0638297872340425,"[[0, 1, 31, 3, 22, 5], [6, 1, 7, 11, 9, 10, 3, 31, 5], [6, 1, 7, 11, 9, 10, 3, 8, 5], [6, 1, 7, 11, 9, 10, 3, 20, 5], [6, 1, 7, 11, 9, 10, 3, 66, 5], [33, 1, 7, 8, 15, 10, 3, 53, 5], [0, 1, 22, 3, 31, 5], [13, 1, 53, 15, 3, 5]]",2.0,['num_insts'],['clang']
+488b842448010000c5ea594804488b842488000000c5ea5910c5fa118c24e0000000c5fa118c24f4000000c5fa119424c8000000c5fa119424dc000000,476.0,"	.text
+	mov	rax, qword ptr [rsp + 328]
+	vmulss	xmm1, xmm2, dword ptr [rax + 4]
+	mov	rax, qword ptr [rsp + 136]
+	vmulss	xmm2, xmm2, dword ptr [rax]
+	vmovss	dword ptr [rsp + 224], xmm1
+	vmovss	dword ptr [rsp + 244], xmm1
+	vmovss	dword ptr [rsp + 200], xmm2
+	vmovss	dword ptr [rsp + 220], xmm2
+
+",Ld,5.5,583.103515625,0.2250073857668067,8,4,4,4.0,0.1596638655462184,"[[6, 1, 7, 11, 9, 10, 3, 15, 5], [185, 1, 69, 7, 15, 9, 10, 3, 62, 5], [6, 1, 7, 11, 9, 10, 3, 15, 5], [185, 1, 69, 7, 15, 10, 3, 69, 5], [131, 1, 62, 3, 7, 11, 9, 10, 5], [131, 1, 62, 3, 7, 11, 9, 10, 5], [131, 1, 69, 3, 7, 11, 9, 10, 5], [131, 1, 69, 3, 7, 11, 9, 10, 5]]",2.0,['num_insts'],['openblas-sgeev.goto']
+4a8b14e5c0d60d01b900d80d01be7ef916014889df,130.0,"	.text
+	mov	rdx, qword ptr [8*r12 + 17684160]
+	mov	ecx, 17684480
+	mov	esi, 18282878
+	mov	rdi, rbx
+
+",Scalar,1.31,106.98749542236328,0.1770192659818209,4,1,0,1.0,0.2307692307692307,"[[6, 1, 7, 45, 9, 10, 3, 4, 5], [14, 1, 9, 3, 12, 5], [14, 1, 9, 3, 24, 5], [0, 1, 41, 3, 8, 5]]",1.0,['num_insts'],['ffmpeg']
+498b7d004883e7fe0fb64701c0e80383e00783f801,199.0,"	.text
+	mov	rdi, qword ptr [r13]
+	and	rdi, -2
+	movzx	eax, byte ptr [rdi + 1]
+	shr	al, 3
+	and	eax, 7
+	cmp	eax, 1
+
+",Ld,2.0,189.76866149902344,0.0463886356832993,6,2,0,1.5,0.2462311557788944,"[[6, 1, 7, 19, 10, 3, 8, 5], [32, 1, 9, 8, 3, 8, 5], [46, 1, 7, 8, 9, 10, 3, 31, 5], [50, 1, 9, 58, 3, 58, 5], [32, 1, 9, 31, 3, 31, 5], [13, 1, 31, 9, 3, 5]]",1.5,['num_insts'],['clang']
+83c101410fafcf4863c9488d2c8b,504.0,"	.text
+	add	ecx, 1
+	imul	ecx, r15d
+	movsxd	rcx, ecx
+	lea	rbp, [rbx + 4*rcx]
+
+",Scalar,5.06,241.79185485839844,0.5202542562333364,4,1,0,1.0,0.8015873015873016,"[[16, 1, 9, 12, 3, 12, 5], [28, 1, 39, 12, 3, 12, 5], [29, 1, 12, 3, 20, 5], [33, 1, 7, 41, 20, 10, 3, 23, 5]]",1.5,['1_3_RAW'],['openblas-spotrf.goto']
+4989ed498b46084d39ef4889442410,99.0,"	.text
+	mov	r13, rbp
+	mov	rax, qword ptr [r14 + 8]
+	cmp	r15, r13
+	mov	qword ptr [rsp + 16], rax
+
+",Ld/St,1.0,99.91764831542967,0.00926917490333,4,1,1,1.0,0.0101010101010101,"[[0, 1, 23, 3, 19, 5], [6, 1, 7, 17, 9, 10, 3, 15, 5], [13, 1, 30, 19, 3, 5], [0, 1, 15, 3, 7, 11, 9, 10, 5]]",1.5,['1_3_RAW'],['ffmpeg']
+498b7e08894424504c8b5f304c89f74981fb70fa5100,135.0,"	.text
+	mov	rdi, qword ptr [r14 + 8]
+	mov	dword ptr [rsp + 80], eax
+	mov	r11, qword ptr [rdi + 48]
+	mov	rdi, r14
+	cmp	r11, 5372528
+
+",Ld/St,1.37,135.83245849609375,0.006166359230324,5,2,1,1.25,0.0740740740740741,"[[6, 1, 7, 17, 9, 10, 3, 8, 5], [0, 1, 31, 3, 7, 11, 9, 10, 5], [6, 1, 7, 8, 9, 10, 3, 65, 5], [0, 1, 17, 3, 8, 5], [13, 1, 65, 9, 3, 5]]",1.25,['num_insts'],['tensorflow']
+4889d983e00783e1074189cc4109c44109f44889de,229.0,"	.text
+	mov	rcx, rbx
+	and	eax, 7
+	and	ecx, 7
+	mov	r12d, ecx
+	or	r12d, eax
+	or	r12d, esi
+	mov	rsi, rbx
+
+",Scalar,2.32,219.1742553710937,0.042907181785617,7,0,0,1.75,0.2358078602620087,"[[0, 1, 41, 3, 20, 5], [32, 1, 9, 31, 3, 31, 5], [32, 1, 9, 12, 3, 12, 5], [0, 1, 12, 3, 21, 5], [49, 1, 31, 21, 3, 21, 5], [49, 1, 24, 21, 3, 21, 5], [0, 1, 41, 3, 2, 5]]",1.75,['num_insts'],['clang']
+488b4e2831d24889c849f7f14939d4,2100.0,"	.text
+	mov	rcx, qword ptr [rsi + 40]
+	xor	edx, edx
+	mov	rax, rcx
+	div	r9
+	cmp	r12, rdx
+
+",Scalar/Vec,21.0,2131.767578125,0.0151274181547619,5,1,0,1.25,0.9404761904761904,"[[6, 1, 7, 2, 9, 10, 3, 20, 5], [43, 1, 22, 22, 3, 22, 5], [0, 1, 20, 3, 15, 5], [181, 1, 47, 4, 15, 3, 4, 15, 5], [13, 1, 45, 4, 3, 5]]",21.0,['inst_3'],['tensorflow']
+4989c58b442428c644241000c644242000c744243800000000488b5c24604c897c243083e0018944243c,497.0,"	.text
+	mov	r13, rax
+	mov	eax, dword ptr [rsp + 40]
+	mov	byte ptr [rsp + 16], 0
+	mov	byte ptr [rsp + 32], 0
+	mov	dword ptr [rsp + 56], 0
+	mov	rbx, qword ptr [rsp + 96]
+	mov	qword ptr [rsp + 48], r15
+	and	eax, 1
+	mov	dword ptr [rsp + 60], eax
+
+",St,5.0,519.1373901367188,0.0445420324682469,9,2,5,5.0,0.0060362173038229,"[[0, 1, 15, 3, 19, 5], [6, 1, 7, 11, 9, 10, 3, 31, 5], [0, 1, 9, 3, 7, 11, 9, 10, 5], [0, 1, 9, 3, 7, 11, 9, 10, 5], [0, 1, 9, 3, 7, 11, 9, 10, 5], [6, 1, 7, 11, 9, 10, 3, 41, 5], [0, 1, 30, 3, 7, 11, 9, 10, 5], [32, 1, 9, 31, 3, 31, 5], [0, 1, 31, 3, 7, 11, 9, 10, 5]]",2.25,['num_insts'],['clang']
+488b742450488b3cf0488b44f0084889bc24e800000048898424d80000004885c9,600.0,"	.text
+	mov	rsi, qword ptr [rsp + 80]
+	mov	rdi, qword ptr [rax + 8*rsi]
+	mov	rax, qword ptr [rax + 8*rsi + 8]
+	mov	qword ptr [rsp + 232], rdi
+	mov	qword ptr [rsp + 216], rax
+	test	rcx, rcx
+
+",Ld/St,5.0,464.1869201660156,0.2263551330566406,6,3,2,2.0,0.6666666666666666,"[[6, 1, 7, 11, 9, 10, 3, 2, 5], [6, 1, 7, 15, 2, 10, 3, 8, 5], [6, 1, 7, 15, 2, 9, 10, 3, 15, 5], [0, 1, 8, 3, 7, 11, 9, 10, 5], [0, 1, 15, 3, 7, 11, 9, 10, 5], [25, 1, 20, 20, 3, 5]]",1.5,"['num_insts', '1_3_RAW', '2_4_RAW']","['openblas-dgeev.goto', 'openblas-sgemm.goto', 'openblas-sgeev.goto', 'openblas-dgetri.goto', 'openblas-dgemm.goto', 'openblas-sgetri.goto']"
+488b842400010000488b54243048890283bc24f8000000408b842408010000894208,223.0,"	.text
+	mov	rax, qword ptr [rsp + 256]
+	mov	rdx, qword ptr [rsp + 48]
+	mov	qword ptr [rdx], rax
+	cmp	dword ptr [rsp + 248], 64
+	mov	eax, dword ptr [rsp + 264]
+	mov	dword ptr [rdx + 8], eax
+
+",Ld/St,2.29,237.726303100586,0.0660372336349147,6,4,2,2.0,0.1031390134529147,"[[6, 1, 7, 11, 9, 10, 3, 15, 5], [6, 1, 7, 11, 9, 10, 3, 4, 5], [0, 1, 15, 3, 7, 4, 10, 5], [13, 1, 7, 11, 9, 10, 9, 3, 5], [6, 1, 7, 11, 9, 10, 3, 31, 5], [0, 1, 31, 3, 7, 4, 9, 10, 5]]",1.5,"['num_insts', '0_2_RAW', '0_5_RAW', '1_2_RAW', '1_5_RAW', '4_5_RAW']",['clang']
+488b0424488d7c24204889ee48895c24304889442428,198.0,"	.text
+	mov	rax, qword ptr [rsp]
+	lea	rdi, [rsp + 32]
+	mov	rsi, rbp
+	mov	qword ptr [rsp + 48], rbx
+	mov	qword ptr [rsp + 40], rax
+
+",St,2.0,198.96075439453125,0.004852294921875,5,2,2,2.0,0.0101010101010101,"[[6, 1, 7, 11, 10, 3, 15, 5], [33, 1, 7, 11, 9, 10, 3, 8, 5], [0, 1, 23, 3, 2, 5], [0, 1, 41, 3, 7, 11, 9, 10, 5], [0, 1, 15, 3, 7, 11, 9, 10, 5]]",1.5,['0_4_RAW'],['clang']
+c5fb2ac08b8c248800000039d9c5fb12f0c5f95af6c4c17a1136,297.0,"	.text
+	vcvtsi2sd	xmm0, xmm0, eax
+	mov	ecx, dword ptr [rsp + 136]
+	cmp	ecx, ebx
+	vmovddup	xmm6, xmm0                      # xmm6 = xmm0[0,0]
+	vcvtpd2ps	xmm6, xmm6
+	vmovss	dword ptr [r14], xmm6
+
+",Vec,3.0,617.6002197265625,1.079462019281355,4,1,0,1.0,0.6632996632996633,"[[316, 1, 38, 31, 3, 38, 5], [6, 1, 7, 11, 9, 10, 3, 12, 5], [13, 1, 12, 27, 3, 5], [371, 1, 38, 3, 81, 5], [434, 1, 81, 3, 81, 5], [131, 1, 81, 3, 7, 17, 10, 5]]",2.0,"['0_3_RAW', '3_4_RAW', '3_5_RAW', '4_5_RAW']",['openblas-ccholesky.goto']
+415541544989d4554889fd534889f34883ec18,417.0,"	.text
+	push	r13
+	push	r12
+	mov	r12, rdx
+	push	rbp
+	mov	rbp, rdi
+	push	rbx
+	mov	rbx, rsi
+	sub	rsp, 24
+
+",St,4.0,412.3849487304688,0.0110672692314896,8,0,0,2.0,0.5203836930455635,"[[36, 1, 19, 11, 3, 11, 7, 11, 9, 10, 5], [36, 1, 45, 11, 3, 11, 7, 11, 9, 10, 5], [0, 1, 4, 3, 45, 5], [36, 1, 23, 11, 3, 11, 7, 11, 9, 10, 5], [0, 1, 8, 3, 23, 5], [36, 1, 41, 11, 3, 11, 7, 11, 9, 10, 5], [0, 1, 2, 3, 41, 5], [35, 1, 9, 11, 3, 11, 5]]",2.0,['num_insts'],['clang']
+4c8bbc24400100004c8bac24f00000004c8bb42448010000488b442470488b38,248.0,"	.text
+	mov	r15, qword ptr [rsp + 320]
+	mov	r13, qword ptr [rsp + 240]
+	mov	r14, qword ptr [rsp + 328]
+	mov	rax, qword ptr [rsp + 112]
+	mov	rdi, qword ptr [rax]
+
+",Ld,2.49,245.60777282714844,0.0096460773098853,5,5,0,2.5,0.0080645161290322,"[[6, 1, 7, 11, 9, 10, 3, 30, 5], [6, 1, 7, 11, 9, 10, 3, 19, 5], [6, 1, 7, 11, 9, 10, 3, 17, 5], [6, 1, 7, 11, 9, 10, 3, 15, 5], [6, 1, 7, 15, 10, 3, 8, 5]]",1.25,['num_insts'],['clang']
+4989d94989e8b902000000baed000000be1e000000,130.0,"	.text
+	mov	r9, rbx
+	mov	r8, rbp
+	mov	ecx, 2
+	mov	edx, 237
+	mov	esi, 30
+
+",Scalar,1.31,130.98728942871094,0.0075945340670072,5,0,0,1.25,0.0384615384615384,"[[0, 1, 41, 3, 47, 5], [0, 1, 23, 3, 53, 5], [14, 1, 9, 3, 12, 5], [14, 1, 9, 3, 22, 5], [14, 1, 9, 3, 24, 5]]",1.25,['num_insts'],['clang']
+4883e0fe4989c74983cf014c897b48,99.0,"	.text
+	and	rax, -2
+	mov	r15, rax
+	or	r15, 1
+	mov	qword ptr [rbx + 72], r15
+
+",St,1.0,99.21932220458984,0.0022153758039378,4,0,1,1.0,0.0101010101010101,"[[32, 1, 9, 15, 3, 15, 5], [0, 1, 15, 3, 30, 5], [49, 1, 9, 30, 3, 30, 5], [0, 1, 30, 3, 7, 41, 9, 10, 5]]",1.25,"['1_3_RAW', '2_3_RAW']",['clang']
+48994c89c348f7f9480fafc14829c3,4580.0,"	.text
+	cqo
+	mov	rbx, r8
+	idiv	rcx
+	imul	rax, rcx
+	sub	rbx, rax
+
+",Scalar/Vec,42.25,2343.861083984375,0.4882399379946779,5,0,0,1.25,0.972707423580786,"[[223, 1, 15, 3, 4, 5], [0, 1, 53, 3, 41, 5], [224, 1, 20, 4, 15, 3, 4, 15, 5], [28, 1, 20, 15, 3, 15, 5], [35, 1, 15, 41, 3, 41, 5]]",24.25,['inst_2'],['tensorflow']
+4983f9fe4c8d4908480f44c14d39c84c89c9,198.0,"	.text
+	cmp	r9, -2
+	lea	r9, [rcx + 8]
+	cmove	rax, rcx
+	cmp	r8, r9
+	mov	rcx, r9
+
+",Scalar,2.0,202.2200469970703,0.0213133686720722,5,1,0,1.25,0.3686868686868687,"[[13, 1, 47, 9, 3, 5], [33, 1, 7, 20, 9, 10, 3, 47, 5], [94, 1, 20, 3, 15, 5], [13, 1, 53, 47, 3, 5], [0, 1, 47, 3, 20, 5]]",1.25,['num_insts'],['clang']
+89c14a8d44210331d24889de4889ef48f7f1480fafc1b9ffffffff4889c2,3993.0,"	.text
+	mov	ecx, eax
+	lea	rax, [rcx + r12 + 3]
+	xor	edx, edx
+	mov	rsi, rbx
+	mov	rdi, rbp
+	div	rcx
+	imul	rax, rcx
+	mov	ecx, 4294967295
+	mov	rdx, rax
+
+",Scalar/Vec,36.4,2365.223876953125,0.407657431266435,9,1,0,2.25,0.9436513899323816,"[[0, 1, 31, 3, 12, 5], [33, 1, 7, 20, 45, 9, 10, 3, 15, 5], [43, 1, 22, 22, 3, 22, 5], [0, 1, 41, 3, 2, 5], [0, 1, 23, 3, 8, 5], [181, 1, 20, 4, 15, 3, 4, 15, 5], [28, 1, 20, 15, 3, 15, 5], [14, 1, 9, 3, 12, 5], [0, 1, 15, 3, 4, 5]]",21.25,['0_5_RAW'],['clang']
+488b9518feffff488b8500feffff480faf9520feffff480faf8508feffff498bbc24a80000004c8bbd10feffff4c8badf8fdffff480faf95e0fdffff480fafc2488985a8fdffff,442.0,"	.text
+	mov	rdx, qword ptr [rbp - 488]
+	mov	rax, qword ptr [rbp - 512]
+	imul	rdx, qword ptr [rbp - 480]
+	imul	rax, qword ptr [rbp - 504]
+	mov	rdi, qword ptr [r12 + 168]
+	mov	r15, qword ptr [rbp - 496]
+	mov	r13, qword ptr [rbp - 520]
+	imul	rdx, qword ptr [rbp - 544]
+	imul	rax, rdx
+	mov	qword ptr [rbp - 600], rax
+
+",Scalar/Vec,4.42,455.5126953125,0.0305717088518099,10,8,1,4.0,0.0950226244343891,"[[6, 1, 7, 23, 9, 10, 3, 4, 5], [6, 1, 7, 23, 9, 10, 3, 15, 5], [28, 1, 7, 23, 9, 10, 4, 3, 4, 5], [28, 1, 7, 23, 9, 10, 15, 3, 15, 5], [6, 1, 7, 45, 9, 10, 3, 8, 5], [6, 1, 7, 23, 9, 10, 3, 30, 5], [6, 1, 7, 23, 9, 10, 3, 19, 5], [28, 1, 7, 23, 9, 10, 4, 3, 4, 5], [28, 1, 4, 15, 3, 15, 5], [0, 1, 15, 3, 7, 23, 9, 10, 5]]",2.5,['num_insts'],['tensorflow']
+0f285c0e10f30f7f140f660f74c3660fd7d04883c1104983e810,164.0,"	.text
+	movaps	xmm3, xmmword ptr [rsi + rcx + 16]
+	movdqu	xmmword ptr [rdi + rcx], xmm2
+	pcmpeqb	xmm0, xmm3
+	pmovmskb	edx, xmm0
+	add	rcx, 16
+	sub	r8, 16
+
+",Scalar/Vec,1.67,177.3445281982422,0.0813690743795255,6,1,1,1.5,0.0853658536585365,"[[124, 1, 7, 2, 20, 9, 10, 3, 102, 5], [189, 1, 69, 3, 7, 8, 20, 10, 5], [239, 1, 102, 38, 3, 38, 5], [242, 1, 38, 3, 22, 5], [16, 1, 9, 20, 3, 20, 5], [35, 1, 9, 53, 3, 53, 5]]",1.5,"['num_insts', '2_3_RAW']",['tensorflow']
+488b842430020000898c2494010000c5fa107c24604c8b9424b8000000c5fa104c2470448b30c57828842490000000c5f828a424a0000000,346.0,"	.text
+	mov	rax, qword ptr [rsp + 560]
+	mov	dword ptr [rsp + 404], ecx
+	vmovss	xmm7, dword ptr [rsp + 96]      # xmm7 = mem[0],zero,zero,zero
+	mov	r10, qword ptr [rsp + 184]
+	vmovss	xmm1, dword ptr [rsp + 112]     # xmm1 = mem[0],zero,zero,zero
+	mov	r14d, dword ptr [rax]
+	vmovaps	xmm8, xmmword ptr [rsp + 144]
+	vmovaps	xmm4, xmmword ptr [rsp + 160]
+
+",Ld/St,3.5,389.0430908203125,0.1244019965904985,3,2,1,1.0,0.7109826589595376,"[[6, 1, 7, 11, 9, 10, 3, 15, 5], [0, 1, 12, 3, 7, 11, 9, 10, 5], [131, 1, 7, 11, 9, 10, 3, 101, 5], [6, 1, 7, 11, 9, 10, 3, 66, 5], [131, 1, 7, 11, 9, 10, 3, 62, 5], [6, 1, 7, 15, 10, 3, 40, 5], [186, 1, 7, 11, 9, 10, 3, 100, 5], [186, 1, 7, 11, 9, 10, 3, 80, 5]]",2.0,['num_insts'],['openblas-sgeev.goto']
+488b5c24e8488b7c24284889c6488b8c24e000000048c1e7024829de4885db,201.0,"	.text
+	mov	rbx, qword ptr [rsp - 24]
+	mov	rdi, qword ptr [rsp + 40]
+	mov	rsi, rax
+	mov	rcx, qword ptr [rsp + 224]
+	shl	rdi, 2
+	sub	rsi, rbx
+	test	rbx, rbx
+
+",Ld,2.0,205.6379547119141,0.0230744015518113,7,3,0,1.75,0.1293532338308456,"[[6, 1, 7, 11, 9, 10, 3, 41, 5], [6, 1, 7, 11, 9, 10, 3, 8, 5], [0, 1, 15, 3, 2, 5], [6, 1, 7, 11, 9, 10, 3, 20, 5], [34, 1, 9, 8, 3, 8, 5], [35, 1, 41, 2, 3, 2, 5], [25, 1, 41, 41, 3, 5]]",1.75,['num_insts'],['openblas-ssymm.goto']
+488b411831d2488b3149f7f7498d04d04c8b184d85db,2202.0,"	.text
+	mov	rax, qword ptr [rcx + 24]
+	xor	edx, edx
+	mov	rsi, qword ptr [rcx]
+	div	r15
+	lea	rax, [r8 + 8*rdx]
+	mov	r11, qword ptr [rax]
+	test	r11, r11
+
+",Scalar/Vec,21.0,2349.3271484375,0.0669060619607175,7,4,0,2.0,0.9091734786557676,"[[6, 1, 7, 20, 9, 10, 3, 15, 5], [43, 1, 22, 22, 3, 22, 5], [6, 1, 7, 20, 10, 3, 2, 5], [181, 1, 30, 4, 15, 3, 4, 15, 5], [33, 1, 7, 53, 4, 10, 3, 15, 5], [6, 1, 7, 15, 10, 3, 65, 5], [25, 1, 65, 65, 3, 5]]",21.0,['inst_3'],['tensorflow']
+488d50c031c94885c0480f44d1807a1c004889542418,197.0,"	.text
+	lea	rdx, [rax - 64]
+	xor	ecx, ecx
+	test	rax, rax
+	cmove	rdx, rcx
+	cmp	byte ptr [rdx + 28], 0
+	mov	qword ptr [rsp + 24], rdx
+
+",Ld/St,1.98,202.4054718017578,0.027438943156131,6,2,1,1.5,0.2385786802030456,"[[33, 1, 7, 15, 9, 10, 3, 4, 5], [43, 1, 12, 12, 3, 12, 5], [25, 1, 15, 15, 3, 5], [94, 1, 20, 3, 4, 5], [13, 1, 7, 4, 9, 10, 9, 3, 5], [0, 1, 4, 3, 7, 11, 9, 10, 5]]",1.53,['3_5_RAW'],['clang']
+488b571083e2034809ca488957104885ed48892e,747.0,"	.text
+	mov	rdx, qword ptr [rdi + 16]
+	and	edx, 3
+	or	rdx, rcx
+	mov	qword ptr [rdi + 16], rdx
+	test	rbp, rbp
+	mov	qword ptr [rsi], rbp
+
+",St,7.0,750.3753662109375,0.0045185625313755,6,1,2,2.0,0.7322623828647925,"[[6, 1, 7, 8, 9, 10, 3, 4, 5], [32, 1, 9, 22, 3, 22, 5], [49, 1, 20, 4, 3, 4, 5], [0, 1, 4, 3, 7, 8, 9, 10, 5], [25, 1, 23, 23, 3, 5], [0, 1, 23, 3, 7, 2, 10, 5]]",1.5,"['num_insts', '0_3_RAW']",['clang']
+488d74242831d2c703000000004c89ff,100.0,"	.text
+	lea	rsi, [rsp + 40]
+	xor	edx, edx
+	mov	dword ptr [rbx], 0
+	mov	rdi, r15
+
+",St,1.0,106.52183532714844,0.0652183532714843,4,1,1,1.0,0.0,"[[33, 1, 7, 11, 9, 10, 3, 2, 5], [43, 1, 22, 22, 3, 22, 5], [0, 1, 9, 3, 7, 41, 10, 5], [0, 1, 30, 3, 8, 5]]",1.0,"['num_insts', 'inst_2']",['ffmpeg']
+8b7338418b5530458b5d2c418b7d44897424688954246044895c2458,298.0,"	.text
+	mov	esi, dword ptr [rbx + 56]
+	mov	edx, dword ptr [r13 + 48]
+	mov	r11d, dword ptr [r13 + 44]
+	mov	edi, dword ptr [r13 + 68]
+	mov	dword ptr [rsp + 104], esi
+	mov	dword ptr [rsp + 96], edx
+	mov	dword ptr [rsp + 88], r11d
+
+",Ld/St,3.0,295.643798828125,0.0079067153418624,7,4,3,3.0,0.0067114093959731,"[[6, 1, 7, 41, 9, 10, 3, 24, 5], [6, 1, 7, 19, 9, 10, 3, 22, 5], [6, 1, 7, 19, 9, 10, 3, 52, 5], [6, 1, 7, 19, 9, 10, 3, 44, 5], [0, 1, 24, 3, 7, 11, 9, 10, 5], [0, 1, 22, 3, 7, 11, 9, 10, 5], [0, 1, 52, 3, 7, 11, 9, 10, 5]]",1.75,['num_insts'],['ffmpeg']
+4889de4883e6f0488b360fb67e1140c0ef0383e70183e201be01000000,213.0,"	.text
+	mov	rsi, rbx
+	and	rsi, -16
+	mov	rsi, qword ptr [rsi]
+	movzx	edi, byte ptr [rsi + 17]
+	shr	dil, 3
+	and	edi, 1
+	and	edx, 1
+	mov	esi, 1
+
+",Scalar,2.12,228.8823699951172,0.074565117347968,8,2,0,2.0,0.0610328638497652,"[[0, 1, 41, 3, 2, 5], [32, 1, 9, 2, 3, 2, 5], [6, 1, 7, 2, 10, 3, 2, 5], [46, 1, 7, 2, 9, 10, 3, 44, 5], [50, 1, 9, 161, 3, 161, 5], [32, 1, 9, 44, 3, 44, 5], [32, 1, 9, 22, 3, 22, 5], [14, 1, 9, 3, 24, 5]]",2.0,['num_insts'],['clang']
+4d8b482031d24c89c848f777084839d6,2099.0,"	.text
+	mov	r9, qword ptr [r8 + 32]
+	xor	edx, edx
+	mov	rax, r9
+	div	qword ptr [rdi + 8]
+	cmp	rsi, rdx
+
+",Scalar/Vec,21.0,2125.593505859375,0.0126696073651143,5,2,0,1.25,0.9404478323010956,"[[6, 1, 7, 53, 9, 10, 3, 47, 5], [43, 1, 22, 22, 3, 22, 5], [0, 1, 47, 3, 15, 5], [181, 1, 7, 8, 9, 10, 4, 15, 3, 4, 15, 5], [13, 1, 2, 4, 3, 5]]",21.0,['inst_3'],['tensorflow']
+f20f5cc2660f28d3f20f59c4f20f51c8f20f5ed1f20f59d4660f541424,3409.0,"	.text
+	subsd	xmm0, xmm2
+	movapd	xmm2, xmm3
+	mulsd	xmm0, xmm4
+	sqrtsd	xmm1, xmm0
+	divsd	xmm2, xmm1
+	mulsd	xmm2, xmm4
+	andpd	xmm2, xmmword ptr [rsp]
+
+",Vec,34.0,2018.0780029296875,0.4080146661983903,7,1,0,1.75,0.9486652977412732,"[[147, 1, 69, 38, 3, 38, 5], [205, 1, 102, 3, 69, 5], [135, 1, 80, 38, 3, 38, 5], [354, 1, 38, 3, 62, 5], [136, 1, 62, 69, 3, 69, 5], [135, 1, 80, 69, 3, 69, 5], [314, 1, 7, 11, 10, 69, 3, 69, 5]]",16.06,['3_4_RAW'],['openblas-zgeev.goto']
+488d421e4883e0f04829c44c8d64241f4983e4f0498d04144d39ef48898530ffffff,211.0,"	.text
+	lea	rax, [rdx + 30]
+	and	rax, -16
+	sub	rsp, rax
+	lea	r12, [rsp + 31]
+	and	r12, -16
+	lea	rax, [r12 + rdx]
+	cmp	r15, r13
+	mov	qword ptr [rbp - 208], rax
+
+",St,2.11,233.8711700439453,0.1083941708243853,8,3,1,2.0,0.0521327014218008,"[[33, 1, 7, 4, 9, 10, 3, 15, 5], [32, 1, 9, 15, 3, 15, 5], [35, 1, 15, 11, 3, 11, 5], [33, 1, 7, 11, 9, 10, 3, 45, 5], [32, 1, 9, 45, 3, 45, 5], [33, 1, 7, 45, 4, 10, 3, 15, 5], [13, 1, 30, 19, 3, 5], [0, 1, 15, 3, 7, 23, 9, 10, 5]]",2.0,['num_insts'],"['openblas-zpotrf.goto', 'openblas-sgemm.goto', 'openblas-dsyrk.goto', 'openblas-cger.goto', 'openblas-icamax.goto', 'openblas-sasum.goto', 'openblas-strmm.goto', 'openblas-zscal.goto', 'openblas-csyrk.goto', 'openblas-sger.goto', 'openblas-idamax.goto', 'openblas-dgeev.goto', 'openblas-dtrsm.goto', 'openblas-ztrmm.goto', 'openblas-scholesky.goto', 'openblas-dgetri.goto', 'openblas-snrm2.goto', 'openblas-sgemv.goto', 'openblas-ztrsm.goto', 'openblas-zgemm.goto', 'openblas-ssymv.goto', 'openblas-cgeev.goto', 'openblas-daxpy.goto', 'openblas-srot.goto', 'openblas-cgemm.goto', 'openblas-zgesv.goto', 'openblas-strsm.goto', 'openblas-cgesv.goto', 'openblas-zhemv.goto', 'openblas-cher2k.goto', 'openblas-zasum.goto', 'openblas-sscal.goto', 'openblas-dznrm2.goto', 'openblas-zswap.goto', 'openblas-casum.goto', 'openblas-dgesv.goto', 'openblas-ctrmm.goto', 'openblas-scnrm2.goto', 'openblas-zsymv.goto', 'openblas-zaxpy.goto', 'openblas-sswap.goto', 'openblas-cscal.goto', 'openblas-dlinpack.goto', 'openblas-zsymm.goto', 'openblas-chemv.goto', 'openblas-csyr2k.goto', 'openblas-scopy.goto', 'openblas-zdot.goto', 'openblas-sgesv.goto', 'openblas-dcopy.goto', 'openblas-dtrmm.goto', 'openblas-cherk.goto', 'openblas-cgemv.goto', 'openblas-slinpack.goto', 'openblas-dasum.goto', 'openblas-zsyrk.goto', 'openblas-dsymv.goto', 'openblas-ssymm.goto', 'openblas-chemm.goto', 'openblas-csymv.goto', 'openblas-zgetri.goto', 'openblas-dscal.goto', 'tensorflow', 'openblas-izamax.goto', 'openblas-zlinpack.goto', 'openblas-saxpy.goto', 'openblas-dger.goto', 'openblas-cswap.goto', 'openblas-zgemv.goto', 'openblas-dnrm2.goto', 'openblas-zcholesky.goto', 'embree', 'openblas-zgeev.goto', 'eigen-matmat', 'openblas-sgeev.goto', 'openblas-ssyrk.goto', 'openblas-dpotrf.goto', 'openblas-zhemm.goto', 'openblas-cpotrf.goto', 'openblas-zher2k.goto', 'openblas-csymm.goto', 'openblas-dsymm.goto', 'openblas-isamax.goto', 'openblas-zherk.goto', 'openblas-ctrsm.goto', 'openblas-cdot.goto', 'openblas-ccopy.goto', 'openblas-sgetri.goto', 'openblas-dgemv.goto', 'openblas-zcopy.goto', 'openblas-dsyr2k.goto', 'redis-server', 'openblas-caxpy.goto', 'eigen-vecmat', 'openblas-zsyr2k.goto', 'openblas-ssyr2k.goto', 'openssl', 'openblas-sdot.goto', 'openblas-dswap.goto', 'openblas-clinpack.goto', 'ffmpeg', 'openblas-ccholesky.goto', 'openblas-spotrf.goto', 'openblas-dgemm.goto', 'openblas-zger.goto', 'openblas-drot.goto', 'openblas-ddot.goto', 'openblas-dcholesky.goto', 'openblas-cgetri.goto']"
+4d8d61204c89ef4c89c8489949f7fb4883c2074c39da,2603.0,"	.text
+	lea	r12, [r9 + 32]
+	mov	rdi, r13
+	mov	rax, r9
+	cqo
+	idiv	r11
+	add	rdx, 7
+	cmp	rdx, r11
+
+",Scalar/Vec,24.0,2331.645751953125,0.1042467337867364,7,1,0,1.75,0.932769880906646,"[[33, 1, 7, 47, 9, 10, 3, 45, 5], [0, 1, 19, 3, 8, 5], [0, 1, 47, 3, 15, 5], [223, 1, 15, 3, 4, 5], [224, 1, 65, 4, 15, 3, 4, 15, 5], [16, 1, 9, 4, 3, 4, 5], [13, 1, 4, 65, 3, 5]]",24.25,['inst_4'],['tensorflow']
+418b1f488b3c244c89f6418b6f04,149.0,"	.text
+	mov	ebx, dword ptr [r15]
+	mov	rdi, qword ptr [rsp]
+	mov	rsi, r14
+	mov	ebp, dword ptr [r15 + 4]
+
+",Ld,1.5,148.12403869628906,0.0058789349242344,4,3,0,1.5,0.0067114093959731,"[[6, 1, 7, 30, 10, 3, 27, 5], [6, 1, 7, 11, 10, 3, 8, 5], [0, 1, 17, 3, 2, 5], [6, 1, 7, 30, 9, 10, 3, 93, 5]]",1.0,['num_insts'],['clang']
+488b442460498947108b44246841894718837c245840c744246800000000,297.0,"	.text
+	mov	rax, qword ptr [rsp + 96]
+	mov	qword ptr [r15 + 16], rax
+	mov	eax, dword ptr [rsp + 104]
+	mov	dword ptr [r15 + 24], eax
+	cmp	dword ptr [rsp + 88], 64
+	mov	dword ptr [rsp + 104], 0
+
+",Ld/St,3.0,300.76580810546875,0.0126794885706018,6,3,3,3.0,0.01010101010101,"[[6, 1, 7, 11, 9, 10, 3, 15, 5], [0, 1, 15, 3, 7, 30, 9, 10, 5], [6, 1, 7, 11, 9, 10, 3, 31, 5], [0, 1, 31, 3, 7, 30, 9, 10, 5], [13, 1, 7, 11, 9, 10, 9, 3, 5], [0, 1, 9, 3, 7, 11, 9, 10, 5]]",1.5,"['num_insts', '0_1_RAW', '0_3_RAW', '2_3_RAW']",['clang']
+89f98d79014489c00fa281e1f00f00000fb6db,33721.0,"	.text
+	mov	ecx, edi
+	lea	edi, [rcx + 1]
+	mov	eax, r8d
+	cpuid
+	and	ecx, 4080
+	movzx	ebx, bl
+
+",Scalar/Vec,115.0,310.3070068359375,0.9907978112500834,6,1,0,1.5,0.9955517333412414,"[[0, 1, 44, 3, 12, 5], [33, 1, 7, 20, 9, 10, 3, 44, 5], [0, 1, 18, 3, 31, 5], [388, 1, 31, 12, 3, 31, 27, 12, 22, 5], [32, 1, 9, 12, 3, 12, 5], [46, 1, 179, 3, 27, 5]]",99.43,['inst_3'],"['openblas-zpotrf.goto', 'openblas-sgemm.goto', 'openblas-dsyrk.goto', 'openblas-cger.goto', 'openblas-icamax.goto', 'openblas-sasum.goto', 'openblas-strmm.goto', 'openblas-zscal.goto', 'openblas-csyrk.goto', 'openblas-sger.goto', 'openblas-idamax.goto', 'openblas-dgeev.goto', 'openblas-dtrsm.goto', 'openblas-ztrmm.goto', 'openblas-scholesky.goto', 'openblas-dgetri.goto', 'openblas-snrm2.goto', 'openblas-sgemv.goto', 'openblas-ztrsm.goto', 'openblas-zgemm.goto', 'openblas-ssymv.goto', 'openblas-cgeev.goto', 'openblas-daxpy.goto', 'openblas-srot.goto', 'openblas-cgemm.goto', 'openblas-zgesv.goto', 'openblas-strsm.goto', 'openblas-cgesv.goto', 'openblas-zhemv.goto', 'sqlite', 'openblas-cher2k.goto', 'openblas-zasum.goto', 'openblas-sscal.goto', 'openblas-dznrm2.goto', 'openblas-zswap.goto', 'openblas-casum.goto', 'openblas-dgesv.goto', 'openblas-ctrmm.goto', 'openblas-scnrm2.goto', 'openblas-zsymv.goto', 'openblas-zaxpy.goto', 'gzip-decompress', 'openblas-sswap.goto', 'gzip-compress', 'clang', 'openblas-cscal.goto', 'openblas-dlinpack.goto', 'openblas-zsymm.goto', 'openblas-chemv.goto', 'openblas-csyr2k.goto', 'openblas-scopy.goto', 'openblas-zdot.goto', 'openblas-sgesv.goto', 'openblas-dcopy.goto', 'openblas-dtrmm.goto', 'openblas-cherk.goto', 'openblas-cgemv.goto', 'openblas-slinpack.goto', 'openblas-dasum.goto', 'openblas-zsyrk.goto', 'openblas-dsymv.goto', 'openblas-ssymm.goto', 'openblas-chemm.goto', 'openblas-csymv.goto', 'openblas-zgetri.goto', 'openblas-dscal.goto', 'tensorflow', 'openblas-izamax.goto', 'openblas-zlinpack.goto', 'openblas-saxpy.goto', 'openblas-dger.goto', 'openblas-cswap.goto', 'openblas-zgemv.goto', 'openblas-dnrm2.goto', 'openblas-zcholesky.goto', 'embree', 'openblas-zgeev.goto', 'eigen-matmat', 'openblas-sgeev.goto', 'openblas-ssyrk.goto', 'openblas-dpotrf.goto', 'openblas-zhemm.goto', 'openblas-cpotrf.goto', 'openblas-zher2k.goto', 'openblas-csymm.goto', 'openblas-dsymm.goto', 'openblas-isamax.goto', 'openblas-zherk.goto', 'openblas-ctrsm.goto', 'openblas-cdot.goto', 'openblas-ccopy.goto', 'openblas-sgetri.goto', 'openblas-dgemv.goto', 'openblas-zcopy.goto', 'openblas-dsyr2k.goto', 'redis-server', 'openblas-caxpy.goto', 'eigen-vecmat', 'openblas-zsyr2k.goto', 'openblas-ssyr2k.goto', 'openssl', 'openblas-sdot.goto', 'openblas-dswap.goto', 'openblas-clinpack.goto', 'ffmpeg', 'openblas-ccholesky.goto', 'openblas-spotrf.goto', 'openblas-dgemm.goto', 'openblas-zger.goto', 'openblas-drot.goto', 'openblas-ddot.goto', 'openblas-dcholesky.goto', 'openblas-cgetri.goto']"
+4c8b34244c89e7498d5e084889de,97.0,"	.text
+	mov	r14, qword ptr [rsp]
+	mov	rdi, r12
+	lea	rbx, [r14 + 8]
+	mov	rsi, rbx
+
+",Ld,1.0,103.93704223632812,0.0715158993435889,4,2,0,1.0,0.0309278350515464,"[[6, 1, 7, 11, 10, 3, 17, 5], [0, 1, 45, 3, 8, 5], [33, 1, 7, 17, 9, 10, 3, 41, 5], [0, 1, 41, 3, 2, 5]]",1.0,"['num_insts', '0_2_RAW']",['clang']
+488b6b0831d24989c448f7f5488b03488b04d04989d64885c0,3775.0,"	.text
+	mov	rbp, qword ptr [rbx + 8]
+	xor	edx, edx
+	mov	r12, rax
+	div	rbp
+	mov	rax, qword ptr [rbx]
+	mov	rax, qword ptr [rax + 8*rdx]
+	mov	r14, rdx
+	test	rax, rax
+
+",Scalar/Vec,35.0,2387.856689453125,0.3674551816018211,8,3,0,2.0,0.9470198675496688,"[[6, 1, 7, 41, 9, 10, 3, 23, 5], [43, 1, 22, 22, 3, 22, 5], [0, 1, 15, 3, 45, 5], [181, 1, 23, 4, 15, 3, 4, 15, 5], [6, 1, 7, 41, 10, 3, 15, 5], [6, 1, 7, 15, 4, 10, 3, 15, 5], [0, 1, 4, 3, 17, 5], [25, 1, 15, 15, 3, 5]]",21.5,['0_3_RAW'],['tensorflow']
+be0100000001f0448d4e0121c889c6488b34f24839f7,215.0,"	.text
+	mov	esi, 1
+	add	eax, esi
+	lea	r9d, [rsi + 1]
+	and	eax, ecx
+	mov	esi, eax
+	mov	rsi, qword ptr [rdx + 8*rsi]
+	cmp	rdi, rsi
+
+",Scalar,2.36,227.58404541015625,0.0585304437681686,7,2,0,1.75,0.1860465116279069,"[[14, 1, 9, 3, 24, 5], [16, 1, 24, 31, 3, 31, 5], [33, 1, 7, 2, 9, 10, 3, 95, 5], [32, 1, 12, 31, 3, 31, 5], [0, 1, 31, 3, 24, 5], [6, 1, 7, 4, 2, 10, 3, 2, 5], [13, 1, 8, 2, 3, 5]]",1.75,['num_insts'],['clang']
+4889cb48899568ffffff4589c74d89ce,98.0,"	.text
+	mov	rbx, rcx
+	mov	qword ptr [rbp - 152], rdx
+	mov	r15d, r8d
+	mov	r14, r9
+
+",Scalar,1.0,98.02947235107422,0.0003007382762675,4,0,1,1.0,0.0204081632653061,"[[0, 1, 20, 3, 41, 5], [0, 1, 4, 3, 7, 23, 9, 10, 5], [0, 1, 18, 3, 39, 5], [0, 1, 47, 3, 17, 5]]",1.0,"['num_insts', 'inst_1']","['embree', 'tensorflow', 'ffmpeg']"
+498d69084d29e149c1f9034d85c9,282.0,"	.text
+	lea	rbp, [r9 + 8]
+	sub	r9, r12
+	sar	r9, 3
+	test	r9, r9
+
+",Scalar,3.0,116.3712921142578,0.5873358435664616,4,1,0,1.0,0.6453900709219857,"[[33, 1, 7, 47, 9, 10, 3, 23, 5], [35, 1, 45, 47, 3, 47, 5], [56, 1, 9, 47, 3, 47, 5], [25, 1, 47, 47, 3, 5]]",1.0,['num_insts'],['clang']
+498b5f504989c4498d474848894424084839c3,132.0,"	.text
+	mov	rbx, qword ptr [r15 + 80]
+	mov	r12, rax
+	lea	rax, [r15 + 72]
+	mov	qword ptr [rsp + 8], rax
+	cmp	rbx, rax
+
+",Ld/St,1.33,128.70697021484375,0.0249471953420928,5,2,1,1.25,0.053030303030303,"[[6, 1, 7, 30, 9, 10, 3, 41, 5], [0, 1, 15, 3, 45, 5], [33, 1, 7, 30, 9, 10, 3, 15, 5], [0, 1, 15, 3, 7, 11, 9, 10, 5], [13, 1, 41, 15, 3, 5]]",1.5,['2_3_RAW'],['clang']
+488b772848890c064883c0084c01c94c39c0,147.0,"	.text
+	mov	rsi, qword ptr [rdi + 40]
+	mov	qword ptr [rsi + rax], rcx
+	add	rax, 8
+	add	rcx, r9
+	cmp	rax, r8
+
+",Ld/St,1.5,143.78443908691406,0.0218745640345982,5,1,1,1.25,0.1496598639455782,"[[6, 1, 7, 8, 9, 10, 3, 2, 5], [0, 1, 20, 3, 7, 2, 15, 10, 5], [16, 1, 9, 15, 3, 15, 5], [16, 1, 47, 20, 3, 20, 5], [13, 1, 15, 53, 3, 5]]",1.5,['0_1_RAW'],['ffmpeg']
+31ed83fa0d480f44e84983c4184d39f7,198.0,"	.text
+	xor	ebp, ebp
+	cmp	edx, 13
+	cmove	rbp, rax
+	add	r12, 24
+	cmp	r15, r14
+
+",Scalar,1.99,199.99139404296875,0.0100575456715593,5,0,0,1.25,0.3686868686868687,"[[43, 1, 93, 93, 3, 93, 5], [13, 1, 22, 9, 3, 5], [94, 1, 15, 3, 23, 5], [16, 1, 9, 45, 3, 45, 5], [13, 1, 30, 17, 3, 5]]",1.25,['num_insts'],['clang']
+8b4424688b7c2468c1f81f31c729c74863ff48c1e704480faffd,246.0,"	.text
+	mov	eax, dword ptr [rsp + 104]
+	mov	edi, dword ptr [rsp + 104]
+	sar	eax, 31
+	xor	edi, eax
+	sub	edi, eax
+	movsxd	rdi, edi
+	shl	rdi, 4
+	imul	rdi, rbp
+
+",Scalar,2.36,243.74708557128903,0.0091581887345974,8,2,0,2.0,0.1869918699186991,"[[6, 1, 7, 11, 9, 10, 3, 31, 5], [6, 1, 7, 11, 9, 10, 3, 44, 5], [56, 1, 9, 31, 3, 31, 5], [43, 1, 31, 44, 3, 44, 5], [35, 1, 31, 44, 3, 44, 5], [29, 1, 44, 3, 8, 5], [34, 1, 9, 8, 3, 8, 5], [28, 1, 23, 8, 3, 8, 5]]",2.0,['num_insts'],"['openblas-zswap.goto', 'openblas-zaxpy.goto', 'openblas-zdot.goto', 'openblas-zcopy.goto']"
+448b9424c80000004489d08bb424c00000009941f7fe4c8bb424b00000004c89f70faff2,808.0,"	.text
+	mov	r10d, dword ptr [rsp + 200]
+	mov	eax, r10d
+	mov	esi, dword ptr [rsp + 192]
+	cdq
+	idiv	r14d
+	mov	r14, qword ptr [rsp + 176]
+	mov	rdi, r14
+	imul	esi, edx
+
+",Scalar/Vec,8.0,824.537841796875,0.0204676259862314,8,3,0,2.0,0.7524752475247525,"[[6, 1, 7, 11, 9, 10, 3, 48, 5], [0, 1, 48, 3, 31, 5], [6, 1, 7, 11, 9, 10, 3, 24, 5], [223, 1, 31, 3, 22, 5], [224, 1, 40, 22, 31, 3, 22, 31, 5], [6, 1, 7, 11, 9, 10, 3, 17, 5], [0, 1, 17, 3, 8, 5], [28, 1, 22, 24, 3, 24, 5]]",8.0,['inst_4'],['clang']
+448d79ff41be01000000884424304c8b642420,118.0,"	.text
+	lea	r15d, [rcx - 1]
+	mov	r14d, 1
+	mov	byte ptr [rsp + 48], al
+	mov	r12, qword ptr [rsp + 32]
+
+",Ld/St,1.19,126.9590301513672,0.0759239843336203,4,2,1,1.0,0.1525423728813559,"[[33, 1, 7, 20, 9, 10, 3, 39, 5], [14, 1, 9, 3, 40, 5], [0, 1, 58, 3, 7, 11, 9, 10, 5], [6, 1, 7, 11, 9, 10, 3, 45, 5]]",1.0,"['num_insts', 'inst_2']",['clang']
+418b7e08498d76104c89fa4889d9,98.0,"	.text
+	mov	edi, dword ptr [r14 + 8]
+	lea	rsi, [r14 + 16]
+	mov	rdx, r15
+	mov	rcx, rbx
+
+",Ld,1.0,101.36289978027344,0.0343153038803412,4,2,0,1.0,0.0204081632653061,"[[6, 1, 7, 17, 9, 10, 3, 44, 5], [33, 1, 7, 17, 9, 10, 3, 2, 5], [0, 1, 30, 3, 4, 5], [0, 1, 41, 3, 20, 5]]",1.0,['num_insts'],['tensorflow']
+4d636e08418b4e0c488b45008b6d084489ea4829d14c8d0ce84839cd,398.0,"	.text
+	movsxd	r13, dword ptr [r14 + 8]
+	mov	ecx, dword ptr [r14 + 12]
+	mov	rax, qword ptr [rbp]
+	mov	ebp, dword ptr [rbp + 8]
+	mov	edx, r13d
+	sub	rcx, rdx
+	lea	r9, [rax + 8*rbp]
+	cmp	rbp, rcx
+
+",Ld,4.0,227.5719451904297,0.4282111929888701,8,5,0,2.5,0.371859296482412,"[[29, 1, 7, 17, 9, 10, 3, 19, 5], [6, 1, 7, 17, 9, 10, 3, 12, 5], [6, 1, 7, 23, 10, 3, 15, 5], [6, 1, 7, 23, 9, 10, 3, 93, 5], [0, 1, 57, 3, 22, 5], [35, 1, 4, 20, 3, 20, 5], [33, 1, 7, 15, 23, 10, 3, 47, 5], [13, 1, 23, 20, 3, 5]]",2.0,['num_insts'],['clang']
+410fb606498b5608488b7c241048899424a800000084c0888424a0000000,198.0,"	.text
+	movzx	eax, byte ptr [r14]
+	mov	rdx, qword ptr [r14 + 8]
+	mov	rdi, qword ptr [rsp + 16]
+	mov	qword ptr [rsp + 168], rdx
+	test	al, al
+	mov	byte ptr [rsp + 160], al
+
+",Ld/St,2.0,198.40196228027344,0.0020301125266335,6,3,2,2.0,0.0101010101010101,"[[46, 1, 7, 17, 10, 3, 31, 5], [6, 1, 7, 17, 9, 10, 3, 4, 5], [6, 1, 7, 11, 9, 10, 3, 8, 5], [0, 1, 4, 3, 7, 11, 9, 10, 5], [25, 1, 58, 58, 3, 5], [0, 1, 58, 3, 7, 11, 9, 10, 5]]",1.5,"['num_insts', '0_5_RAW', '1_3_RAW']",['clang']
+498bbc24700100004c89fab902000000be94541901,129.0,"	.text
+	mov	rdi, qword ptr [r12 + 368]
+	mov	rdx, r15
+	mov	ecx, 2
+	mov	esi, 18437268
+
+",Scalar,1.31,110.56802368164062,0.142883537351623,4,1,0,1.0,0.2248062015503876,"[[6, 1, 7, 45, 9, 10, 3, 8, 5], [0, 1, 30, 3, 4, 5], [14, 1, 9, 3, 12, 5], [14, 1, 9, 3, 24, 5]]",1.0,['num_insts'],['ffmpeg']
+4821442420488d5c24104c8d6c24204889de4c89ef,599.0,"	.text
+	and	qword ptr [rsp + 32], rax
+	lea	rbx, [rsp + 16]
+	lea	r13, [rsp + 32]
+	mov	rsi, rbx
+	mov	rdi, r13
+
+",Ld/St,6.0,606.0571899414062,0.01178161926779,5,3,1,1.5,0.7495826377295493,"[[32, 1, 15, 7, 11, 9, 10, 3, 7, 11, 9, 10, 5], [33, 1, 7, 11, 9, 10, 3, 41, 5], [33, 1, 7, 11, 9, 10, 3, 19, 5], [0, 1, 41, 3, 2, 5], [0, 1, 19, 3, 8, 5]]",1.59,['0_2_RAW'],['clang']
+4c01bc24f00000004c01bc24f80000004c01bc24000100004c01bc24080100004c3b642410,604.0,"	.text
+	add	qword ptr [rsp + 240], r15
+	add	qword ptr [rsp + 248], r15
+	add	qword ptr [rsp + 256], r15
+	add	qword ptr [rsp + 264], r15
+	cmp	r12, qword ptr [rsp + 16]
+
+",St,6.0,585.63232421875,0.0304100592404801,5,5,4,4.0,0.3377483443708609,"[[16, 1, 30, 7, 11, 9, 10, 3, 7, 11, 9, 10, 5], [16, 1, 30, 7, 11, 9, 10, 3, 7, 11, 9, 10, 5], [16, 1, 30, 7, 11, 9, 10, 3, 7, 11, 9, 10, 5], [16, 1, 30, 7, 11, 9, 10, 3, 7, 11, 9, 10, 5], [13, 1, 45, 7, 11, 9, 10, 3, 5]]",1.25,['num_insts'],"['openblas-zgemv.goto', 'openblas-zgetri.goto', 'openblas-zgeev.goto', 'openblas-zlinpack.goto']"
+488b7c241841b7044989fe4983c6204c39742438,132.0,"	.text
+	mov	rdi, qword ptr [rsp + 24]
+	mov	r15b, 4
+	mov	r14, rdi
+	add	r14, 32
+	cmp	qword ptr [rsp + 56], r14
+
+",Ld,1.33,148.93421936035156,0.1282895406087239,5,2,0,1.25,0.053030303030303,"[[6, 1, 7, 11, 9, 10, 3, 8, 5], [14, 1, 9, 3, 145, 5], [0, 1, 8, 3, 17, 5], [16, 1, 9, 17, 3, 17, 5], [13, 1, 7, 11, 9, 10, 17, 3, 5]]",1.25,['num_insts'],['tensorflow']
+41564989fe488d7f08415541545553,508.0,"	.text
+	push	r14
+	mov	r14, rdi
+	lea	rdi, [rdi + 8]
+	push	r13
+	push	r12
+	push	rbp
+	push	rbx
+
+",St,5.0,508.216552734375,0.000426284910187,7,1,0,1.75,0.6555118110236221,"[[36, 1, 17, 11, 3, 11, 7, 11, 9, 10, 5], [0, 1, 8, 3, 17, 5], [33, 1, 7, 8, 9, 10, 3, 8, 5], [36, 1, 19, 11, 3, 11, 7, 11, 9, 10, 5], [36, 1, 45, 11, 3, 11, 7, 11, 9, 10, 5], [36, 1, 23, 11, 3, 11, 7, 11, 9, 10, 5], [36, 1, 41, 11, 3, 11, 7, 11, 9, 10, 5]]",1.75,['num_insts'],['tensorflow']
+89d131d2488d4401ff48f7f14889ca480fafc1,3995.0,"	.text
+	mov	ecx, edx
+	xor	edx, edx
+	lea	rax, [rcx + rax - 1]
+	div	rcx
+	mov	rdx, rcx
+	imul	rax, rcx
+
+",Scalar/Vec,36.0,2336.892822265625,0.415045601435388,6,1,0,1.5,0.9624530663329162,"[[0, 1, 22, 3, 12, 5], [43, 1, 22, 22, 3, 22, 5], [33, 1, 7, 20, 15, 9, 10, 3, 15, 5], [181, 1, 20, 4, 15, 3, 4, 15, 5], [0, 1, 20, 3, 4, 5], [28, 1, 20, 15, 3, 15, 5]]",21.25,['0_3_RAW'],['clang']
+498b4520498b4c2420488b702848397128,199.0,"	.text
+	mov	rax, qword ptr [r13 + 32]
+	mov	rcx, qword ptr [r12 + 32]
+	mov	rsi, qword ptr [rax + 40]
+	cmp	qword ptr [rcx + 40], rsi
+
+",Ld,2.01,199.9422912597656,0.004735131958621,4,4,0,2.0,0.0050251256281407,"[[6, 1, 7, 19, 9, 10, 3, 15, 5], [6, 1, 7, 45, 9, 10, 3, 20, 5], [6, 1, 7, 15, 9, 10, 3, 2, 5], [13, 1, 7, 20, 9, 10, 2, 3, 5]]",1.0,"['num_insts', '0_2_RAW', '1_3_RAW', '2_3_RAW']",['clang']
+4883c4684889ef4489fe5b5d415c415d415e415f,396.0,"	.text
+	add	rsp, 104
+	mov	rdi, rbp
+	mov	esi, r15d
+	pop	rbx
+	pop	rbp
+	pop	r12
+	pop	r13
+	pop	r14
+	pop	r15
+
+",Ld,4.0,399.626953125,0.0091589725378787,9,0,0,2.25,0.4318181818181818,"[[16, 1, 9, 11, 3, 11, 5], [0, 1, 23, 3, 8, 5], [0, 1, 39, 3, 24, 5], [64, 1, 11, 7, 11, 10, 3, 41, 11, 5], [64, 1, 11, 7, 11, 10, 3, 23, 11, 5], [64, 1, 11, 7, 11, 10, 3, 45, 11, 5], [64, 1, 11, 7, 11, 10, 3, 19, 11, 5], [64, 1, 11, 7, 11, 10, 3, 17, 11, 5], [64, 1, 11, 7, 11, 10, 3, 30, 11, 5]]",2.25,['num_insts'],['sqlite']
+4889ea4c89e64c89ff480faf542408,100.0,"	.text
+	mov	rdx, rbp
+	mov	rsi, r12
+	mov	rdi, r15
+	imul	rdx, qword ptr [rsp + 8]
+
+",Scalar,1.0,103.7021484375,0.037021484375,4,1,0,1.0,0.0,"[[0, 1, 23, 3, 4, 5], [0, 1, 45, 3, 2, 5], [0, 1, 30, 3, 8, 5], [28, 1, 7, 11, 9, 10, 4, 3, 4, 5]]",1.25,['0_3_RAW'],"['openssl', 'clang', 'tensorflow']"
+418b7634ba570000004c89ef48898590feffff,119.0,"	.text
+	mov	esi, dword ptr [r14 + 52]
+	mov	edx, 87
+	mov	rdi, r13
+	mov	qword ptr [rbp - 368], rax
+
+",Ld/St,1.19,112.6020736694336,0.0537640868114824,4,1,1,1.0,0.1596638655462184,"[[6, 1, 7, 17, 9, 10, 3, 24, 5], [14, 1, 9, 3, 22, 5], [0, 1, 19, 3, 8, 5], [0, 1, 15, 3, 7, 23, 9, 10, 5]]",1.0,"['num_insts', 'inst_3']",['tensorflow']
+4a8d1c2f4a8d343b4889d94889f2,98.0,"	.text
+	lea	rbx, [rdi + r13]
+	lea	rsi, [rbx + r15]
+	mov	rcx, rbx
+	mov	rdx, rsi
+
+",Scalar,1.0,105.8798828125,0.0804069674744897,4,2,0,1.0,0.0204081632653061,"[[33, 1, 7, 8, 19, 10, 3, 41, 5], [33, 1, 7, 41, 30, 10, 3, 2, 5], [0, 1, 41, 3, 20, 5], [0, 1, 2, 3, 4, 5]]",1.0,"['num_insts', '0_1_RAW']",['clang']
+415741564989fe4155415455534881ecc800000080bf900b000000,647.0,"	.text
+	push	r15
+	push	r14
+	mov	r14, rdi
+	push	r13
+	push	r12
+	push	rbp
+	push	rbx
+	sub	rsp, 200
+	cmp	byte ptr [rdi + 2960], 0
+
+",St,6.0,620.53857421875,0.0408986488118238,9,1,0,2.25,0.6522411128284389,"[[36, 1, 30, 11, 3, 11, 7, 11, 9, 10, 5], [36, 1, 17, 11, 3, 11, 7, 11, 9, 10, 5], [0, 1, 8, 3, 17, 5], [36, 1, 19, 11, 3, 11, 7, 11, 9, 10, 5], [36, 1, 45, 11, 3, 11, 7, 11, 9, 10, 5], [36, 1, 23, 11, 3, 11, 7, 11, 9, 10, 5], [36, 1, 41, 11, 3, 11, 7, 11, 9, 10, 5], [35, 1, 9, 11, 3, 11, 5], [13, 1, 7, 8, 9, 10, 9, 3, 5]]",2.25,['num_insts'],['clang']
+498b34244889c14189d6498b4424084839f0,131.0,"	.text
+	mov	rsi, qword ptr [r12]
+	mov	rcx, rax
+	mov	r14d, edx
+	mov	rax, qword ptr [r12 + 8]
+	cmp	rax, rsi
+
+",Ld,1.38,134.11422729492188,0.0237727274421517,5,2,0,1.25,0.0458015267175572,"[[6, 1, 7, 45, 10, 3, 2, 5], [0, 1, 15, 3, 20, 5], [0, 1, 22, 3, 40, 5], [6, 1, 7, 45, 9, 10, 3, 15, 5], [13, 1, 15, 2, 3, 5]]",1.25,['num_insts'],['clang']
